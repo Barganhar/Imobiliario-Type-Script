@@ -9,19 +9,21 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Barganhar/jubilant-doodle.git"
+    "url": "git+https://https://github.com/Barganhar/ImobiliarioJavaScript.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Barganhar/jubilant-doodle/issues"
+    "url": "https://https://github.com/Barganhar/ImobiliarioJavaScript/issues"
   },
-  "homepage": "https://github.com/Barganhar/jubilant-doodle#readme",
+  "homepage": "https://https://github.com/Barganhar/ImobiliarioJavaScript#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "mongoose": "^5.12.6"
   },
   "devDependencies": {
-    "@types/express": "^4.17.11"
+    "@types/express": "^4.17.11",
+    "@types/mongoose": "^5.10.5"
   }
 }
