@@ -10,14 +10,12 @@ class ListarController {
     async pessoa(request: Request, response: Response) {
       try {
         const { id } = request.params;
-        const ciclo = await CicloSchema.findOne({ _id: id });
-        // console.log(await CicloSchema.exists({ _id: id }));
-        // console.log(await CicloSchema.find({ _id: id }).countDocuments());
+        const cliente = await ClienteSchema.findOne({ _id: id });
   
-        if (ciclo != null) {
-          response.status(200).json({ data: ciclo, error: false, msg: "Ciclo encontrado!" });
+        if (cliente != null) {
+          response.status(200).json({ data: cliente, error: false, msg: "Cliente encontrado!" });
         } else {
-          response.status(404).json({ data: ciclo, error: false, msg: "Ciclo não encontrado!" });
+          response.status(404).json({ data: cliente, error: false, msg: "Cliente não encontrado!" });
         }
       } catch (error) {
         response.status(400).json({ data: error, error: true, msg: "Esse não é um formato válido para o ID!" });
@@ -27,14 +25,12 @@ class ListarController {
     async casa(request: Request, response: Response) {
       try {
         const { id } = request.params;
-        const ciclo = await CicloSchema.findOne({ _id: id });
-        // console.log(await CicloSchema.exists({ _id: id }));
-        // console.log(await CicloSchema.find({ _id: id }).countDocuments());
+        const casa = await CasaSchema.findOne({ _id: id });
   
-        if (ciclo != null) {
-          response.status(200).json({ data: ciclo, error: false, msg: "Ciclo encontrado!" });
+        if (casa != null) {
+          response.status(200).json({ data: casa, error: false, msg: "Casa encontrada!" });
         } else {
-          response.status(404).json({ data: ciclo, error: false, msg: "Ciclo não encontrado!" });
+          response.status(404).json({ data: casa, error: false, msg: "Casa não encontrada!" });
         }
       } catch (error) {
         response.status(400).json({ data: error, error: true, msg: "Esse não é um formato válido para o ID!" });
@@ -44,14 +40,12 @@ class ListarController {
     async venda(request: Request, response: Response) {
       try {
         const { id } = request.params;
-        const ciclo = await CicloSchema.findOne({ _id: id });
-        // console.log(await CicloSchema.exists({ _id: id }));
-        // console.log(await CicloSchema.find({ _id: id }).countDocuments());
+        const vender = await VenderSchema.findOne({ _id: id });
   
-        if (ciclo != null) {
-          response.status(200).json({ data: ciclo, error: false, msg: "Ciclo encontrado!" });
+        if (vender != null) {
+          response.status(200).json({ data: vender, error: false, msg: "Venda encontrada!" });
         } else {
-          response.status(404).json({ data: ciclo, error: false, msg: "Ciclo não encontrado!" });
+          response.status(404).json({ data: vender, error: false, msg: "Venda não encontrado!" });
         }
       } catch (error) {
         response.status(400).json({ data: error, error: true, msg: "Esse não é um formato válido para o ID!" });
@@ -61,14 +55,12 @@ class ListarController {
     async aluguel(request: Request, response: Response) {
       try {
         const { id } = request.params;
-        const ciclo = await CicloSchema.findOne({ _id: id });
-        // console.log(await CicloSchema.exists({ _id: id }));
-        // console.log(await CicloSchema.find({ _id: id }).countDocuments());
+        const alugar = await AlugarSchema.findOne({ _id: id });
   
-        if (ciclo != null) {
-          response.status(200).json({ data: ciclo, error: false, msg: "Ciclo encontrado!" });
+        if (alugar != null) {
+          response.status(200).json({ data: alugar, error: false, msg: "Aluguel encontrado!" });
         } else {
-          response.status(404).json({ data: ciclo, error: false, msg: "Ciclo não encontrado!" });
+          response.status(404).json({ data: alugar, error: false, msg: "Aluguel não encontrado!" });
         }
       } catch (error) {
         response.status(400).json({ data: error, error: true, msg: "Esse não é um formato válido para o ID!" });
