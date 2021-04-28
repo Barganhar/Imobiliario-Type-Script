@@ -1,4 +1,4 @@
-import express, {Request, Response} from "express"; 
+import express from "express"; 
 
 //importando biblioteca do BD
 import {mongoose} from "./config/database";

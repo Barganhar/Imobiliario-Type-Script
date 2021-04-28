@@ -1,10 +1,12 @@
 import { Router } from "express";
 import { RegistroController } from "../controllers/RegistroController";
 import { ListarController } from "../controllers/ListarController";
+import { DeletarController } from "../controllers/DeletarController";
 
 const router = Router();
-const RegistroController = new RegistroController();
-const ListarController = new ListarController();
+const registroController = new RegistroController();
+const listarController = new ListarController();
+const deletarController = new DeletarController();
 
 //Métodos HTTP -> GET, POST e etc...
 // GET -> Solitar recursos/dados do servidor

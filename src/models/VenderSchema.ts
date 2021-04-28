@@ -4,16 +4,16 @@ const VenderSchema = new Schema(
   {
     nome: {
       type: String,
-      required: [true, "O campo nome do débito é obrigatório!"],
+      required: [true, "O nome do vendedor é obrigatório!"],
     },
     valor: {
       type: Number,
       min: [1, "Valor mínimo de R$ 1,00"],
-      required: [true, "O campo valor do débito é obrigatório!"],
+      required: [true, "O valor da venda é obrigatório!"],
     },
     status: {
       type: String,
-      enum: ["PAGO", "AGENDADO", "PENDENTE"],
+      enum: ["VENDIDO", "À VENDA"],
       uppercase: true,
     },
   },
@@ -22,4 +22,4 @@ const VenderSchema = new Schema(
   }
 );
 
-export { VenderSchema };
+export default model("casa", VenderSchema);
