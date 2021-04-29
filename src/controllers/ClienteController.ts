@@ -5,7 +5,7 @@ import ClienteSchema from "../models/ClienteSchema";
 class ClienteController {
 
   // CADASTRAR
-  async pessoa(request: Request, response: Response) {
+  async cliente(request: Request, response: Response) {
     try {
       const novoCliente = await ClienteSchema.create(request.body);
       response.status(201).json({
@@ -23,7 +23,7 @@ class ClienteController {
   }
 
   //LISTAR
-  async pessoa(request: Request, response: Response) {
+  async listarCliente(request: Request, response: Response) {
     try {
       const { id } = request.params;
       const cliente = await ClienteSchema.findOne({ _id: id });
@@ -39,7 +39,7 @@ class ClienteController {
   }
 
   //DELETE
-  async pessoa(request: Request, response: Response) {
+  async deletarCliente(request: Request, response: Response) {
     try {
       const cliente = await ClienteSchema.find();
       response.status(200).json({
@@ -56,6 +56,6 @@ class ClienteController {
     }
   }
 
-
+}
   
 export {ClienteController};
