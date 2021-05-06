@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import AlugarSchema from "../models/AlugarSchema";
+import Locação from "../models/LocaçãoSchema";
 
 
 class AlugarController {
@@ -7,12 +7,8 @@ class AlugarController {
   // CADASTRAR
   async alugar(request: Request, response: Response) {
     try {
-      const novoAlugar = await AlugarSchema.create(request.body);
-      response.status(201).json({
-        data: novoAlugar,
-        error: false,
-        msg: "Aluguel cadastrado com sucesso!",
-      });
+      const novoAlugar = await Locação.create(request.body);
+      response.status(201).json({data: novoAlugar, error: false, msg: "Aluguel cadastrado com sucesso!",});
     } catch (error) {
       response.status(400).json({
         data: error,
@@ -25,34 +21,22 @@ class AlugarController {
   //LISTAR
   async listarAlugar(request: Request, response: Response) {
     try {
-      const Alugar = await AlugarSchema.find();
-
-      if (Alugar != null) {
-        response.status(200).json({ data: Alugar, error: false, msg: "Aluguel encontrado!" });
-      } else {
-        response.status(404).json({ data: Alugar, error: false, msg: "Aluguel não encontrado!" });
-      }
+      const LOCAÇÃO = await Locação.find();
+      response.status(200).json({ data: LOCAÇÃO, error: false, msg: "LOCAÇÃO encontrada!" });
     } catch (error) {
-      response.status(400).json({ data: error, error: true, msg: "Esse não é um formato válido para o ID!" });
+      response.status(404).json({ data: error, error: true, msg: "LOCAÇÃO não encontrada!" });
     }
   }
+
 
   //DELETE
   async deletarAlugar(request: Request, response: Response) {
     const {id} = request.params;
     try {
-      const Alugar = await AlugarSchema.deleteOne({_id : id});
-      response.status(200).json({
-        data: Alugar,
-        error: false,
-        msg: "Lista de ciclos de pagamento atualizada!",
-      });
+      const locação = await Locação.deleteOne({_id : id});
+      response.status(200).json({data: locação, error: false, msg: "Registro deletado",});
     } catch (error) {
-      response.status(400).json({
-        data: error,
-        error: true,
-        msg: "Não foi possível listar os ciclos de pagamento",
-      });
+      response.status(400).json({data: error, error: true, msg: "Não foi possível deletar o registro", });
     }
   }
 

@@ -2,7 +2,7 @@ import { model, Schema } from "mongoose";
 
 const ClienteSchema = new Schema(
   {
-    nomeC: {
+    nome: {
       type: String,
       required: [true, "O nome do cliente é obrigatório!"]
     },
@@ -16,7 +16,8 @@ const ClienteSchema = new Schema(
     },
     Renda:{
         type:Number,
-        required:[true, "O valor mínimo de renda é de 130 do valor do aluguel/parcela."] 
+        min: [650, "o valor mínimo de renda é R$:650,00"],
+        required: [true, "O valor da renda é obrigatório."]
     },
     FormaGarantia:{
       type:String,

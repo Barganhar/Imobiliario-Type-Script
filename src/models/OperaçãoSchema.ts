@@ -3,7 +3,7 @@ import { model, Schema } from "mongoose";
 import {VenderSchema} from "./VenderSchema";
 import {ClienteSchema} from "./ClienteSchema";
 
-const ImobiliariaSchema = new Schema(
+const OperaçãoSchema = new Schema(
     {
     cliente: [ClienteSchema],
     vendas: [VenderSchema],
@@ -13,4 +13,4 @@ const ImobiliariaSchema = new Schema(
     }
 );
 
-export default model("Imobiliaria", ImobiliariaSchema);
+export default model("Operação", OperaçãoSchema);

@@ -2,13 +2,13 @@ import { model, Schema } from "mongoose";
 
 const VenderSchema = new Schema(
   {
-    nomeV: {
+    nome: {
       type: String,
       required: [true, "O nome do vendedor é obrigatório!"],
     },
     valor: {
       type: Number,
-      min: [1, "Valor mínimo de R$ 1,00"],
+      min: [500, "Valor mínimo de parcela é R$ 500,00"],
       required: [true, "O valor da venda é obrigatório!"],
     },
     status: {

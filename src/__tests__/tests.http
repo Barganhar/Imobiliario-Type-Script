@@ -9,16 +9,16 @@ content-Type: application/json
 			"nomeC": "João",
 			"cpf": "11252844980",
             "Email": "julio.filho1hotmail.com",
-            "renda": 1500,
+            "renda": 1500.00,
             "FormaGarantia": "TEM"
 		}
 	],
 	"vendas": [
 		{
 			"nomeV": "gerson",
-            "valor": 350000,
+            "valor": 350.00000,
             "status": "VENDIDO",
-            "endereço": "Rua abobrinha, 1400",
+            "endereço": "Rua dos bobos, 00",
             "cep": "81200-100",
             "data": "2030-01-02"            
 		}
