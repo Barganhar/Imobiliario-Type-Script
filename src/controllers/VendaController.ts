@@ -52,6 +52,29 @@ class VendaController {
       response.status(400).json({data: error, error: true, msg: "Não foi possível deletar o registro", });
     }
   }
+
+  //EDITAR
+
+  async editar(request: Request, response: Response) {
+    try {
+      const { id } = request.params;
+      const body = request.body;
+
+      await Operação.findOneAndUpdate({ _id: id }, body, {
+        returnOriginal: false,
+        useFindAndModify: false,
+      });
+
+      response.status(204).json({});
+    } catch (error) {
+      response.status(400).json({
+        error: true,
+        data: error.message,
+        msg: "Não foi possível concluir esta edição.",
+      });
+    }
+  }
+
 }
   
 export{VendaController};

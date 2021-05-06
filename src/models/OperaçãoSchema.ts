@@ -1,12 +1,9 @@
 import { model, Schema } from "mongoose";
 
-import {VenderSchema} from "./VenderSchema";
-import {ClienteSchema} from "./ClienteSchema";
-
 const OperaçãoSchema = new Schema(
     {
-    cliente: [ClienteSchema],
-    vendas: [VenderSchema],
+    cliente: { type: Schema.Types.ObjectId, ref: "Cliente" },
+    vendas: [{ type: Schema.Types.ObjectId, ref: "Vendas" }],
     },
     {
     timestamps: true,

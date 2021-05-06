@@ -1,6 +1,6 @@
-import { Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose"
 
-const AlugarSchema = new Schema(
+const alugar = new Schema(
   {
     nome: {
       type: String,
@@ -35,4 +35,6 @@ const AlugarSchema = new Schema(
   }
 );
 
-export {AlugarSchema};
+var AlugarSchema = mongoose.model("Alugar", alugar);
+
+export { AlugarSchema };

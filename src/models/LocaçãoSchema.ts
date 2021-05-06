@@ -1,16 +1,19 @@
 import { model, Schema } from "mongoose";
 
-import {ClienteSchema} from "./ClienteSchema";
-import { AlugarSchema } from "./AlugarSchema";
-
 const LocaçãoSchema = new Schema(
-    {
-    cliente: [ClienteSchema],
-    aluguel: [AlugarSchema],
+  {  
+    data: {
+        type: Date,
+        required: [true, "O campo DATA é obrigatório!"],
+      },
+    cliente: { type: Schema.Types.ObjectId, ref: "Cliente" },
+    aluguel: [{ type: Schema.Types.ObjectId, ref: "Aluguel" }],
     },
     {
     timestamps: true,
     }
 );
+
+
 
 export default model("Locação", LocaçãoSchema);

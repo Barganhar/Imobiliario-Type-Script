@@ -3,6 +3,9 @@ import Locação from "../models/LocaçãoSchema";
 
 
 class AlugarController {
+  static editar(arg0: string, editar: any) {
+      throw new Error("Method not implemented.");
+  }
 
   // CADASTRAR
   async alugar(request: Request, response: Response) {
@@ -50,6 +53,26 @@ class AlugarController {
     }
   }
 
+  async editar(request: Request, response: Response) {
+    try {
+      const { id } = request.params;
+      const body = request.body;
+
+      await Locação.findOneAndUpdate({ _id: id }, body, {
+        returnOriginal: false,
+        useFindAndModify: false,
+      });
+
+      response.status(204).json({});
+    } catch (error) {
+      response.status(400).json({
+        error: true,
+        data: error.message,
+        msg: "Não foi possível concluir esta edição.",
+      });
+    }
+  }
 }
+
   
 export {AlugarController};
