@@ -11,13 +11,13 @@ class AlugarController {
       response.status(201).json({
         data: novoAlugar,
         error: false,
-        msg: "Alugar cadastrado com sucesso!",
+        msg: "Aluguel cadastrado com sucesso!",
       });
     } catch (error) {
       response.status(400).json({
         data: error,
         error: true,
-        msg: "Não foi possível cadastrar o Alugar",
+        msg: "Não foi possível cadastrar o Aluguel",
       });
     }
   }
@@ -29,9 +29,9 @@ class AlugarController {
       const Alugar = await AlugarSchema.findOne({ _id: id });
 
       if (Alugar != null) {
-        response.status(200).json({ data: Alugar, error: false, msg: "Alugar encontrado!" });
+        response.status(200).json({ data: Alugar, error: false, msg: "Aluguel encontrado!" });
       } else {
-        response.status(404).json({ data: Alugar, error: false, msg: "Alugar não encontrado!" });
+        response.status(404).json({ data: Alugar, error: false, msg: "Aluguel não encontrado!" });
       }
     } catch (error) {
       response.status(400).json({ data: error, error: true, msg: "Esse não é um formato válido para o ID!" });

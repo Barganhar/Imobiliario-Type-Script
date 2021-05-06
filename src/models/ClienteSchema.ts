@@ -17,6 +17,10 @@ const ClienteSchema = new Schema(
     Renda:{
         type:Number,
         required:[true, "O valor mínimo de renda é de 130% do valor do aluguel/parcela."] 
+    },
+    FormaGarantia:{
+      type:String,
+      enum: ["TEM", "NÃO TEM"],
     }
   },
   {

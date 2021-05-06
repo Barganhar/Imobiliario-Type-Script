@@ -11,7 +11,7 @@ class CasaController {
       response.status(201).json({
         data: novoCasa,
         error: false,
-        msg: "Casa cadastrado com sucesso!",
+        msg: "Casa cadastrada com sucesso!",
       });
     } catch (error) {
       response.status(400).json({
@@ -29,9 +29,9 @@ class CasaController {
       const Casa = await CasaSchema.findOne({ _id: id });
 
       if (Casa != null) {
-        response.status(200).json({ data: Casa, error: false, msg: "Casa encontrado!" });
+        response.status(200).json({ data: Casa, error: false, msg: "Casa encontrada!" });
       } else {
-        response.status(404).json({ data: Casa, error: false, msg: "Casa não encontrado!" });
+        response.status(404).json({ data: Casa, error: false, msg: "Casa não encontrada!" });
       }
     } catch (error) {
       response.status(400).json({ data: error, error: true, msg: "Esse não é um formato válido para o ID!" });
@@ -45,13 +45,13 @@ class CasaController {
       response.status(200).json({
         data: Casa,
         error: false,
-        msg: "Lista de ciclos de pagamento atualizada!",
+        msg: "Casa deletada da lista",
       });
     } catch (error) {
       response.status(400).json({
         data: error,
         error: true,
-        msg: "Não foi possível listar os ciclos de pagamento",
+        msg: "Não foi possível deletar a casa da lista",
       });
     }
   }
