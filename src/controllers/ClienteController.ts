@@ -11,7 +11,7 @@ class ClienteController {
       response.status(201).json({
         data: novoCliente,
         error: false,
-        msg: "Cliente cadastrado com sucesso!"
+        msg: "Cliente cadastrado com sucesso!",
       });
     } catch (error) {
       response.status(400).json({
