@@ -13,16 +13,14 @@ content-Type: application/json
             "FormaGarantia": "TEM"
 		}
 	],
-	"debitos": [
+	"vendas": [
 		{
-			"nome": "Luz",
-			"valor": 300,
-			"status": "PAGO"
-		},
-		{
-			"nome": "Água",
-			"valor": 150,
-			"status": "AGENDADO"
+			"nomeV": "gerson",
+            "valor": 350000,
+            "status": "VENDIDO",
+            "endereço": "Rua abobrinha, 1400",
+            "cep": "81200-100",
+            "data": "2030-01-02"            
 		}
 	]
 }

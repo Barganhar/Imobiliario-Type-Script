@@ -13,7 +13,7 @@ const VenderSchema = new Schema(
     },
     status: {
       type: String,
-      enum: ["À VENDA"],
+      enum: ["À VENDA", "VENDIDO"],
       uppercase: true,
     },
     endereço: {
