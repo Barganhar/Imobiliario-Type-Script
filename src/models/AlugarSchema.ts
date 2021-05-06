@@ -1,4 +1,4 @@
-import { model, Schema } from "mongoose";
+import { Schema } from "mongoose";
 
 const AlugarSchema = new Schema(
   {
