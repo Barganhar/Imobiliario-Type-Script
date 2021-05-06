@@ -13,13 +13,26 @@ const VenderSchema = new Schema(
     },
     status: {
       type: String,
-      enum: ["VENDIDO", "À VENDA"],
+      enum: ["À VENDA"],
       uppercase: true,
     },
+    endereço: {
+      type: String,
+      required: [true, "O campo de endereço é obrigatório!"],
+    },
+    cep: {
+      type: String,
+      required: [true, "O campo de endereço é obrigatório!"],
+    },
+    data: {
+      type: Date,
+      required: [true, "O campo data é obrigatório!"],
+      min: ["2000-01-01", "Data mínima permitida: 01/01/2020"],
+    }
   },
   {
     timestamps: true,
   }
 );
 
-export default model("casa", VenderSchema);
+export default model("vender", VenderSchema);

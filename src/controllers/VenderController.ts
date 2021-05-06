@@ -25,8 +25,7 @@ class VenderController {
   //LISTAR
   async listarVender(request: Request, response: Response) {
     try {
-      const { id } = request.params;
-      const Vender = await VenderSchema.findOne({ _id: id });
+      const Vender = await VenderSchema.findOne();
 
       if (Vender != null) {
         response.status(200).json({ data: Vender, error: false, msg: "Venda encontrada!" });
@@ -40,8 +39,9 @@ class VenderController {
 
   //DELETE
   async deletarVender(request: Request, response: Response) {
+    const {id} = request.params;
     try {
-      const Vender = await VenderSchema.find();
+      const Vender = await VenderSchema.deleteOne({_id : id});
       response.status(200).json({
         data: Vender,
         error: false,

@@ -25,8 +25,7 @@ class ClienteController {
   //LISTAR
   async listarCliente(request: Request, response: Response) {
     try {
-      const { id } = request.params;
-      const cliente = await ClienteSchema.findOne({ _id: id });
+      const cliente = await ClienteSchema.find();
 
       if (cliente != null) {
         response.status(200).json({ data: cliente, error: false, msg: "Cliente encontrado!" });
@@ -40,21 +39,23 @@ class ClienteController {
 
   //DELETE
   async deletarCliente(request: Request, response: Response) {
+    const {id} = request.params;
     try {
-      const cliente = await ClienteSchema.find();
+      const cliente = await ClienteSchema.deleteOne({_id : id});
       response.status(200).json({
         data: cliente,
         error: false,
-        msg: "Lista de ciclos de pagamento atualizada!",
+        msg: "Registro deletado",
       });
     } catch (error) {
       response.status(400).json({
         data: error,
         error: true,
-        msg: "Não foi possível listar os ciclos de pagamento",
+        msg: "Não foi possível deletar os registros",
       });
     }
   }
+
 
 }
   

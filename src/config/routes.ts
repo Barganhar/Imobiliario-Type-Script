@@ -1,13 +1,13 @@
 import { Router } from "express";
 import { ClienteController } from "../controllers/ClienteController";
-import { CasaController } from "../controllers/CasaController";
+import { VendedorController } from "../controllers/VendedorController";
 import { VenderController } from "../controllers/VenderController";
 import { AlugarController } from "../controllers/AlugarController";
 
 
 const router = Router();
 const clienteController = new ClienteController();
-const casaController = new CasaController();
+const vendedorController = new VendedorController();
 const venderController = new VenderController();
 const alugarController = new AlugarController();
 
@@ -16,22 +16,24 @@ const alugarController = new AlugarController();
 // POST -> Enviar recursos/dados/entidades para o servidor
 
 // rotas para registrar
-router.get("/registro/cliente", clienteController.cliente);
-router.get("/registro/casa", casaController.casa);
-router.get("/registro/venda", venderController.vender);
-router.get("/registro/aluguel", alugarController.alugar);
+router.post("/registro/cliente", clienteController.cliente);
+router.post("/registro/venda", venderController.vender);
+router.post("/registro/aluguel", alugarController.alugar);
 
 // rotas para listagem
 router.get("/listar/cliente", clienteController.listarCliente);
-router.get("/listar/casa", casaController.listarCasa);
 router.get("/listar/venda", venderController.listarVender);
 router.get("/listar/aluguel", alugarController.listarAlugar);
 
 // rotas para deletar
-router.get("/deletar/cliente", clienteController.deletarCliente);
-router.get("/deletar/casa", casaController.deletarCasa);
-router.get("/deletar/venda", venderController.deletarVender);
-router.get("/deletar/aluguel", alugarController.deletarAlugar);
+router.delete("/deletar/cliente/{id}", clienteController.deletarCliente);
+router.delete("/deletar/venda/{id}", venderController.deletarVender);
+router.delete("/deletar/aluguel/{id}", alugarController.deletarAlugar);
+
+// vender
+
+router.put("/vender/venda/{id}", vendedorController.alterarVender);
+router.put("/alugar/aluguel/{id}", vendedorController.alterarAlugar);
 
 
 export { router };

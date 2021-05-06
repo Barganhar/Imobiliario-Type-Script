@@ -25,8 +25,7 @@ class AlugarController {
   //LISTAR
   async listarAlugar(request: Request, response: Response) {
     try {
-      const { id } = request.params;
-      const Alugar = await AlugarSchema.findOne({ _id: id });
+      const Alugar = await AlugarSchema.find();
 
       if (Alugar != null) {
         response.status(200).json({ data: Alugar, error: false, msg: "Aluguel encontrado!" });
@@ -40,8 +39,9 @@ class AlugarController {
 
   //DELETE
   async deletarAlugar(request: Request, response: Response) {
+    const {id} = request.params;
     try {
-      const Alugar = await AlugarSchema.find();
+      const Alugar = await AlugarSchema.deleteOne({_id : id});
       response.status(200).json({
         data: Alugar,
         error: false,
