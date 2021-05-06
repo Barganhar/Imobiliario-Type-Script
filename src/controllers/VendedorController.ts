@@ -1,14 +1,12 @@
 import { Request, Response } from "express";
-import AlugarSchema from "../models/AlugarSchema";
-import VenderSchema from "../models/VenderSchema";
-import ClienteSchema from "../models/ClienteSchema";
+import ImobiliariaSchema from "../models/ImobiliariaSchema";
 
 
 class VendedorController {
 
     async alterarVender(request: Request, response: Response) {
         try {
-        const novoCliente = await ClienteSchema.create(request.body);
+        const novoCliente = await ImobiliariaSchema.create(request.body);
         response.status(201).json({
             data: novoCliente,
             error: false,
@@ -25,7 +23,7 @@ class VendedorController {
 
     async alterarAlugar(request: Request, response: Response) {
         try {
-        const novoCliente = await ClienteSchema.create(request.body);
+        const novoCliente = await ImobiliariaSchema.create(request.body);
         response.status(201).json({
             data: novoCliente,
             error: false,

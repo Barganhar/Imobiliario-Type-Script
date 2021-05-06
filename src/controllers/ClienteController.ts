@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import ClienteSchema from "../models/ClienteSchema";
+import ImobiliariaSchema from "../models/ImobiliariaSchema";
 
 
 class ClienteController {
@@ -7,7 +7,7 @@ class ClienteController {
   // CADASTRAR
   async cliente(request: Request, response: Response) {
     try {
-      const novoCliente = await ClienteSchema.create(request.body);
+      const novoCliente = await ImobiliariaSchema.create(request.body);
       response.status(201).json({
         data: novoCliente,
         error: false,
@@ -25,7 +25,7 @@ class ClienteController {
   //LISTAR
   async listarCliente(request: Request, response: Response) {
     try {
-      const cliente = await ClienteSchema.find();
+      const cliente = await ImobiliariaSchema.find();
 
       if (cliente != null) {
         response.status(200).json({ data: cliente, error: false, msg: "Cliente encontrado!" });
@@ -41,7 +41,7 @@ class ClienteController {
   async deletarCliente(request: Request, response: Response) {
     const {id} = request.params;
     try {
-      const cliente = await ClienteSchema.deleteOne({_id : id});
+      const cliente = await ImobiliariaSchema.deleteOne({_id : id});
       response.status(200).json({
         data: cliente,
         error: false,

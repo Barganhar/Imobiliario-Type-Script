@@ -35,4 +35,4 @@ const AlugarSchema = new Schema(
   }
 );
 
-export default model("alugar", AlugarSchema);
+export {AlugarSchema};

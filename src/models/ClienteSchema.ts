@@ -2,9 +2,9 @@ import { model, Schema } from "mongoose";
 
 const ClienteSchema = new Schema(
   {
-    nome: {
+    nomeC: {
       type: String,
-      required: [true, "O nome do cliente é obrigatório!"],
+      required: [true, "O nome do cliente é obrigatório!"]
     },
     cpf: {
       type: String,
@@ -12,15 +12,15 @@ const ClienteSchema = new Schema(
     },
     Email:{
         type:String,
-        required: [true, "O E-mail do cliente é obrigatório!"],
+        required: [true, "O E-mail do cliente é obrigatório!"]
     },
     Renda:{
         type:Number,
-        required:[true, "O valor mínimo de renda é de 130% do valor do aluguel/parcela."] 
+        required:[true, "O valor mínimo de renda é de 130 do valor do aluguel/parcela."] 
     },
     FormaGarantia:{
       type:String,
-      enum: ["TEM", "NÃO TEM"],
+      enum: ["TEM", "NÃO TEM"]
     }
   },
   {
@@ -28,4 +28,4 @@ const ClienteSchema = new Schema(
   }
 );
 
-export default model("casa", ClienteSchema);
+export {ClienteSchema};

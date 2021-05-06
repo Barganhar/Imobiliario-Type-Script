@@ -1,0 +1,32 @@
+### TESTE REGISTRO
+
+POST http://localhost:3000/registro/cliente
+content-Type: application/json
+
+{
+	"cliente": [
+		{
+			"nomeC": "João",
+			"cpf": "11252844980",
+            "Email": "julio.filho1hotmail.com",
+            "renda": 1500,
+            "FormaGarantia": "TEM"
+		}
+	],
+	"debitos": [
+		{
+			"nome": "Luz",
+			"valor": 300,
+			"status": "PAGO"
+		},
+		{
+			"nome": "Água",
+			"valor": 150,
+			"status": "AGENDADO"
+		}
+	]
+}
+
+###
+
+GET http://localhost:3000/registro/venda

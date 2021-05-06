@@ -2,7 +2,7 @@ import { model, Schema } from "mongoose";
 
 const VenderSchema = new Schema(
   {
-    nome: {
+    nomeV: {
       type: String,
       required: [true, "O nome do vendedor é obrigatório!"],
     },
@@ -35,4 +35,4 @@ const VenderSchema = new Schema(
   }
 );
 
-export default model("vender", VenderSchema);
+export{VenderSchema}; 
