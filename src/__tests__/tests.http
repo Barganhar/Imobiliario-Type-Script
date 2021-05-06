@@ -28,3 +28,12 @@ content-Type: application/json
 ###
 
 GET http://localhost:3000/registro/venda
+
+###
+
+GET http://localhost:3000/listar/aluguel
+
+
+###
+
+GET http://localhost:3000/listar/aluguel/60944b0125a659379c51bcc2

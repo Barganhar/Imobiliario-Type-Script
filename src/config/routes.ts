@@ -19,6 +19,10 @@ router.post("/registro/aluguel", alugarController.alugar);
 router.get("/listar/venda", clienteController.listarVenda);
 router.get("/listar/aluguel", alugarController.listarAlugar);
 
+// rotas para listagem
+router.get("/listar/venda/:id", clienteController.listarVendaId);
+router.get("/listar/aluguel/:id", alugarController.listarAlugarId);
+
 // rotas para deletar
 router.delete("/deletar/venda/:id", clienteController.deletarVenda);
 router.delete("/deletar/aluguel/:id", alugarController.deletarAlugar);

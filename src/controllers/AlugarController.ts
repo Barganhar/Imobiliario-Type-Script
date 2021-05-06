@@ -28,6 +28,16 @@ class AlugarController {
     }
   }
 
+  async listarAlugarId(request: Request, response: Response) {
+    const {id} = request.params;
+    try {
+      const LOCAÇÃO = await Locação.findById({_id : id});
+      response.status(200).json({ data: LOCAÇÃO, error: false, msg: "LOCAÇÃO encontrada!" });
+    } catch (error) {
+      response.status(404).json({ data: error, error: true, msg: "LOCAÇÃO não encontrada!" });
+    }
+  }
+
 
   //DELETE
   async deletarAlugar(request: Request, response: Response) {

@@ -32,6 +32,16 @@ class VendaController {
     }
   }
 
+  async listarVendaId(request: Request, response: Response) {
+    const {id} = request.params;
+    try {
+      const VENDA = await Operação.findById({_id : id})
+      response.status(200).json({ data: VENDA, error: false, msg: "VENDA encontrada!" });
+    } catch (error) {
+      response.status(404).json({ data: error, error: true, msg: "VENDA não encontrada!" });
+    }
+  }
+
   //DELETE
   async deletarVenda(request: Request, response: Response) {
     const {id} = request.params;
