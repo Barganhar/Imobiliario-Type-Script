@@ -3,32 +3,14 @@
 POST http://localhost:3000/registro/venda
 content-Type: application/json
 
-{
-	"cliente": [
+
 		{
-			"nome": "João",
-			"cpf": "11252844980",
-            "Email": "julio.filho1hotmail.com",
-            "Renda": 1500.00,
-            "FormaGarantia": "TEM"
-		}
-	],
-	"vendas": [
-		{
-			"nome": "gerson",
-            "valor": 1400,
+			"nome": "geraldo",
+            "valor": 14123120,
             "status": "VENDIDO",
-            "endereço": "Rua dos bobos, 00",
-            "cep": "81200-100",
-            "data": "2030-01-02"            
+            "data": "2020-07-20"            
 		}
-	]
-}
-
-###
-
-GET http://localhost:3000/registro/venda
-
+	
 ###
 
 GET http://localhost:3000/listar/aluguel
@@ -37,3 +19,18 @@ GET http://localhost:3000/listar/aluguel
 ###
 
 GET http://localhost:3000/listar/aluguel/60944b0125a659379c51bcc2
+
+###
+
+PUT http://localhost:3000/vender/editar/60946faa21a0f237c8b324e3
+
+"cliente": [
+{
+    "nome": "Vagner",
+    "cpf": "1125dasdasd4980",
+    "Email": "Diogo@qweqwe",
+    "Renda": 400,
+    "FormaGarantia": "TEM"
+  
+}
+]

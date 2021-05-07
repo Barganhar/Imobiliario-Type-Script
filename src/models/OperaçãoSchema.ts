@@ -1,6 +1,6 @@
-import { model, Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose"
 
-const OperaçãoSchema = new Schema(
+const operação = new Schema(
     {
     cliente: { type: Schema.Types.ObjectId, ref: "Cliente" },
     vendas: [{ type: Schema.Types.ObjectId, ref: "Vendas" }],
@@ -10,4 +10,6 @@ const OperaçãoSchema = new Schema(
     }
 );
 
-export default model("Operação", OperaçãoSchema);
+var OperaçãoSchema = mongoose.model("Operação", operação);
+    
+export { OperaçãoSchema };

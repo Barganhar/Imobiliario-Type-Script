@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
-import Operação from "../models/OperaçãoSchema";
+import {OperaçãoSchema} from "../models/OperaçãoSchema";
+import {VenderSchema} from "../models/VenderSchema";
 
 
 class VendaController {
@@ -7,17 +8,17 @@ class VendaController {
   // CADASTRAR
   async venda(request: Request, response: Response) {
     try {
-      const novaVenda = await Operação.create(request.body);
+      const novaVenda = await VenderSchema.create(request.body);
       response.status(201).json({
         data: novaVenda,
         error: false,
-        msg: "Cliente cadastrado com sucesso!",
+        msg: "Venda cadastrado com sucesso!",
       });
     } catch (error) {
       response.status(400).json({
         data: error,
         error: true,
-        msg: "Não foi possível cadastrar o cliente"
+        msg: "Não foi possível cadastrar a Venda"
       });
     }
   }
@@ -25,7 +26,7 @@ class VendaController {
   //LISTAR
   async listarVenda(request: Request, response: Response) {
     try {
-      const VENDA = await Operação.find();
+      const VENDA = await OperaçãoSchema.find();
       response.status(200).json({ data: VENDA, error: false, msg: "VENDA encontrada!" });
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "VENDA não encontrada!" });
@@ -35,7 +36,7 @@ class VendaController {
   async listarVendaId(request: Request, response: Response) {
     const {id} = request.params;
     try {
-      const VENDA = await Operação.findById({_id : id})
+      const VENDA = await OperaçãoSchema.findById({_id : id})
       response.status(200).json({ data: VENDA, error: false, msg: "VENDA encontrada!" });
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "VENDA não encontrada!" });
@@ -46,7 +47,7 @@ class VendaController {
   async deletarVenda(request: Request, response: Response) {
     const {id} = request.params;
     try {
-      const venda = await Operação.deleteOne({_id : id});
+      const venda = await OperaçãoSchema.deleteOne({_id : id});
       response.status(200).json({data: venda, error: false, msg: "Registro deletado",});
     } catch (error) {
       response.status(400).json({data: error, error: true, msg: "Não foi possível deletar o registro", });
@@ -60,7 +61,7 @@ class VendaController {
       const { id } = request.params;
       const body = request.body;
 
-      await Operação.findOneAndUpdate({ _id: id }, body, {
+      await OperaçãoSchema.findOneAndUpdate({ _id: id }, body, {
         returnOriginal: false,
         useFindAndModify: false,
       });

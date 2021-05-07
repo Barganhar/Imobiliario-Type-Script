@@ -1,6 +1,6 @@
-import { model, Schema } from "mongoose";
+import mongoose, { Schema } from "mongoose"
 
-const LocaçãoSchema = new Schema(
+const locação = new Schema(
   {  
     data: {
         type: Date,
@@ -16,4 +16,6 @@ const LocaçãoSchema = new Schema(
 
 
 
-export default model("Locação", LocaçãoSchema);
+var LocaçãoSchema = mongoose.model("Locação", locação);
+    
+export { LocaçãoSchema };

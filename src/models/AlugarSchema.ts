@@ -21,14 +21,8 @@ const alugar = new Schema(
       required: [true, "A data da locação é obrigatória"],
       min: ["2000-01-01", "Data mínima permitida: 01/01/2000"],
     },
-    endereço: {
-      type: String,
-      required: [true, "O endereço é obrigatório!"],
-    },
-    cep: {
-      type: String,
-      required: [true, "O CEP é obrigatório!"],
-    }
+    
+    casa: { type: Schema.Types.ObjectId, ref: "Casa" },
   },
   {
     timestamps: true,
