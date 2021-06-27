@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Casa } from '../models/Casa';
 import { Cliente } from '../models/Cliente';
 import { Aluguel } from '../models/Aluguel';
+import { Venda } from '../models/Venda';
 
 @Injectable({
   providedIn: 'root'
@@ -30,12 +31,19 @@ export class ImobiliariaService {
     return this.http.post<Cliente>(`${this.baseURL}cliente/cadastrar`, cliente);
   }
 
-
   listarAluguel(): Observable<Aluguel[]>{
     return this.http.get<Aluguel[]>(`${this.baseURL}aluguel/listar`);
   }
 
   cadastrarAluguel(aluguel: Aluguel): Observable<Aluguel>{
     return this.http.post<Aluguel>(`${this.baseURL}aluguel/cadastrar`, aluguel);
+  }
+
+  listarVenda(): Observable<Venda[]>{
+    return this.http.get<Venda[]>(`${this.baseURL}venda/listar`);
+  }
+
+  cadastrarVenda(venda: Venda): Observable<Venda>{
+    return this.http.post<Venda>(`${this.baseURL}venda/cadastrar`, venda);
   }
 }

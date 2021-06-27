@@ -14,16 +14,16 @@
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="data">Valor do Aluguel</mat-label>
-                  <input matInput placeholder="Valor" type="number" name="data" [(ngModel)]="aluguel" />
+                  <input matInput placeholder="Valor" type="number" name="data" [(ngModel)]="valor" />
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="data">Status do aluguel</mat-label>
-                  <input matInput placeholder="Status" type="text" name="data" [(ngModel)]="status"/>
+                  <input matInput placeholder="Status" type="text" name="data" [(ngModel)]="statusAluguel"/>
                 </mat-form-field>
               </div>
       <mat-card-actions>
-        <button mat-raised-button color="warn" (click)="cadastrarAluguel()">Cadastrar</button>
-        <a mat-stroked-button routerLink=""> Listar Alugueis </a>
+        <button mat-raised-button color="warn" (click)="cadastrar()">Cadastrar</button>
+        <a mat-stroked-button routerLink="/aluguel/listar"> Listar Alugueis </a>
       </mat-card-actions>
     </mat-card-content>
   </mat-card>

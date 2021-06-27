@@ -1,1 +1,30 @@
-<p>content works!</p>
+<mat-sidenav-container>
+    <mat-sidenav mode="side" opened fixedInViewport="true" fixedTopGap="64">
+      <mat-nav-list>
+        <a mat-list-item routerLink="">
+          <mat-icon class="material-icons-outlined" mat-list-icon>home</mat-icon>
+          <span> Home</span>
+        </a>
+        <a mat-list-item routerLink="/casa/cadastrar">
+          <mat-icon class="material-icons-outlined" mat-list-icon>house</mat-icon>
+          <span> Cadastrar Casa</span>
+        </a>
+        <a mat-list-item routerLink="/cliente/cadastrar">
+            <mat-icon class="material-icons-outlined" mat-list-icon>person</mat-icon>
+            <span> Cadastrar Cliente</span>
+        </a>
+        <a mat-list-item routerLink="/aluguel/cadastrar">
+            <mat-icon class="material-icons-outlined" mat-list-icon>apartment</mat-icon>
+            <span> Cadastrar Aluguel</span>
+        </a>
+        <a mat-list-item routerLink="/venda/cadastrar">
+            <mat-icon class="material-icons-outlined" mat-list-icon>cottage</mat-icon>
+            <span> Cadastrar Venda</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

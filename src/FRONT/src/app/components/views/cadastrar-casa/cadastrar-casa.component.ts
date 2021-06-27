@@ -33,7 +33,7 @@ export class CadastrarCasaComponent implements OnInit {
         horizontalPosition: "center",
         verticalPosition: "bottom"
       });
-      this.router.navigate([""]);
+      this.router.navigate(["/casa/listar"]);
     }));
   }
 

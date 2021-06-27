@@ -14,7 +14,7 @@
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="data">CPF do Cliente</mat-label>
-                  <input matInput placeholder="CPF" type="text" name="data" [(ngModel)]="cpfCliente" />
+                  <input matInput placeholder="CPF" type="text" name="data" [(ngModel)]="cpf" />
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="data">E-mail do Cliente</mat-label>
@@ -31,7 +31,7 @@
               </div>
       <mat-card-actions>
         <button mat-raised-button color="warn" (click)="cadastrarCliente()">Cadastrar</button>
-        <a mat-stroked-button routerLink=""> Listar Clientes </a>
+        <a mat-stroked-button routerLink="/cliente/listar"> Listar Clientes </a>
       </mat-card-actions>
     </mat-card-content>
   </mat-card>

@@ -16,7 +16,7 @@ export class CadastrarAluguelComponent implements OnInit {
 
   nomeAluguel!: string;
   valor!: number;
-  status!: string;
+  statusAluguel!: string;
 
 
   constructor(private service: ImobiliariaService, private router: Router, private snack: MatSnackBar) {  }
@@ -28,7 +28,7 @@ export class CadastrarAluguelComponent implements OnInit {
     let aluguel = new Aluguel();
     aluguel.nome = this.nomeAluguel;
     aluguel.valor = this.valor;
-    aluguel.status = this.status;
+    aluguel.status = this.statusAluguel;
     this.service.cadastrarAluguel(aluguel).subscribe((aluguel => {
       console.log(aluguel);
       this.snack.open("Aluguel cadastrado com sucesso", "Aluguel", {
@@ -36,7 +36,7 @@ export class CadastrarAluguelComponent implements OnInit {
         horizontalPosition: "center",
         verticalPosition: "bottom"
       });
-      this.router.navigate([""]);
+      this.router.navigate(["/aluguel/listar"]);
     }));
   }
 

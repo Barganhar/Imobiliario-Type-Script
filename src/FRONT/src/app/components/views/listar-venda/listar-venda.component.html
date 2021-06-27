@@ -1,1 +1,32 @@
-<p>listar-venda works!</p>
+<a mat-raised-button color="warn" routerLink="/venda/cadastrar">
+    Novo venda
+  </a>
+  
+  <br><br>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome do venda</th>
+        <th>Valor</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let venda of vendas">
+        <td>
+          {{ venda._id }}
+        </td>
+        <td>
+            {{ venda.nome }}
+        </td>
+        <td>
+            {{ venda.valor }}
+        </td>
+        <td>
+            {{ venda.status }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  

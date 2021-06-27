@@ -1,5 +1,4 @@
-<a mat-raised-button color="warn" routerLink="/aluguel/cadastrar">
-    <mat-icon>medical_services</mat-icon>
+<a mat-raised-button color="warn" routerLink="/venda/cadastrar">
     Novo aluguel
   </a>
   
@@ -11,27 +10,23 @@
         <th>Nome do aluguel</th>
         <th>Valor</th>
         <th>Status</th>
-        <th>Criado em<th>
-        <th>Criado em<th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let medico of medicos">
+      <tr *ngFor="let aluguel of alugueis">
         <td>
-          {{ medico._id }}
+          {{ aluguel._id }}
         </td>
         <td>
-            {{ medico.nome }}
+            {{ aluguel.nome }}
         </td>
         <td>
-            {{ medico.crm }}
+            {{ aluguel.valor }}
         </td>
         <td>
-            {{ medico.especialidade }}
-        </td>
-        <td>
-          {{ medico.createdAt | date: "dd/MM/yyyy HH:mm:ss" }}
+            {{ aluguel.status }}
         </td>
       </tr>
     </tbody>
   </table>
+  

@@ -1,1 +1,35 @@
-<p>cadastrar-venda works!</p>
+<mat-card>
+    <mat-card-title> Cadastrar Venda </mat-card-title>
+    <mat-card-content>
+  
+      <div class="venda">
+        
+        <mat-card>
+            <mat-card-title> Adicionar Venda </mat-card-title>
+            <mat-card-content>
+              <div class="conteudo-venda">
+                <mat-form-field>
+                  <mat-label for="data">Nome da venda</mat-label>
+                  <input matInput placeholder="Venda" type="text" name="data" [(ngModel)]="nomeVenda" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="data">Valor da venda</mat-label>
+                  <input matInput placeholder="Valor" type="number" name="data" [(ngModel)]="valor" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="data">Status da venda</mat-label>
+                  <input matInput placeholder="Status" type="text" name="data" [(ngModel)]="status"/>
+                </mat-form-field>
+              </div>
+            </mat-card-content>
+        </mat-card>
+
+      </div>
+
+        <mat-card-actions>
+            <button mat-raised-button color="warn" (click)="cadastrarVenda()">Cadastrar</button>
+            <a mat-stroked-button routerLink="/venda/listar"> Listar Vendas </a>
+        </mat-card-actions>
+        
+    </mat-card-content>
+</mat-card>
