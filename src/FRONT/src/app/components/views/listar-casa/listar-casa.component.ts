@@ -1,4 +1,6 @@
+import { ImobiliariaService } from 'src/app/services/imobiliaria.service';
 import { Component, OnInit } from '@angular/core';
+import { Casa } from 'src/app/models/Casa';
 
 @Component({
   selector: 'app-listar-casa',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListarCasaComponent implements OnInit {
 
-  constructor() { }
+  casas: Casa[] = [];
+
+  constructor(private service: ImobiliariaService) { }
 
   ngOnInit(): void {
+    this.service.listarCasa().subscribe((casas) => {
+      this.casas = casas;
+    });
   }
 
 }

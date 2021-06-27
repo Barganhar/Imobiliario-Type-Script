@@ -12,24 +12,24 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CadastrarCasaComponent implements OnInit {
   colunasCasa = ["nomeCasa","cep","endereco"]
 
-  nome!: string;
+  nomeCasa!: string;
   cep!: string;
   endereco!: string;
 
-  constructor(private service: ImobiliariaService, private router: Router, private snack: MatScnackBar) { }
+  constructor(private service: ImobiliariaService, private router: Router, private snack: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
   cadastrarCasa(): void{
     let casa = new Casa();
-    casa.nome = this.nome;
+    casa.nome = this.nomeCasa;
     casa.cep = this.cep;
     casa.endereco = this.endereco;
     this.service.cadastrarCasa(casa).subscribe((casa => {
       console.log(casa);
       this.snack.open("Casa cadastrada com sucesso", "Casa", {
-        duration: 3000,
+        duration: 4200,
         horizontalPosition: "center",
         verticalPosition: "bottom"
       });

@@ -1,1 +1,31 @@
-<p>listar-casa works!</p>
+<a mat-raised-button color="warn" routerLink="/casa/cadastrar">
+    Nova Casa
+  </a>
+  
+  <br><br>
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nome da Casa</th>
+        <th>CEP</th>
+        <th>Endereço</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let casa of casas">
+        <td>
+          {{ casa._id }}
+        </td>
+        <td>
+            {{ casa.nome }}
+        </td>
+        <td>
+            {{ casa.cep }}
+        </td>
+        <td>
+            {{ casa.endereco }}
+        </td>
+      </tr>
+    </tbody>
+  </table>

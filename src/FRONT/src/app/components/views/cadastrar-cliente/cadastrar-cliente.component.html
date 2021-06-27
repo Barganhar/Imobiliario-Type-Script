@@ -1,0 +1,37 @@
+<mat-card>
+    <mat-card-title> Cadastrar Cliente </mat-card-title>
+    <mat-card-content>
+  
+      <div class="Cliente">
+        
+          <mat-card>
+            <mat-card-title> Adicionar Cliente </mat-card-title>
+            <mat-card-content>
+              <div class="conteudo-cliente">
+                <mat-form-field>
+                  <mat-label for="data">Nome do Cliente</mat-label>
+                  <input matInput placeholder="Cliente" type="text" name="data" [(ngModel)]="nomeCliente" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="data">CPF do Cliente</mat-label>
+                  <input matInput placeholder="CPF" type="text" name="data" [(ngModel)]="cpfCliente" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="data">E-mail do Cliente</mat-label>
+                  <input matInput placeholder="E-mail" type="text" name="data" [(ngModel)]="email"/>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-label for="data">Renda do Cliente</mat-label>
+                    <input matInput placeholder="Renda" type="number" name="data" [(ngModel)]="renda"/>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label for="data">Forma de garantia do Cliente</mat-label>
+                    <input matInput placeholder="Especialidade" type="text" name="data" [(ngModel)]="garantia"/>
+                  </mat-form-field>
+              </div>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="cadastrarCliente()">Cadastrar</button>
+        <a mat-stroked-button routerLink=""> Listar Clientes </a>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>

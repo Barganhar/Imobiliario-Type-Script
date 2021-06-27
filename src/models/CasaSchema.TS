@@ -2,6 +2,10 @@ import mongoose, { Schema } from "mongoose"
 
 const casa = new Schema(
     {
+    nome: {
+        type: String,
+        required: [true, "O nome é obrigatório!"],
+    },
     endereço: {
         type: String,
         required: [true, "O endereço é obrigatório!"],

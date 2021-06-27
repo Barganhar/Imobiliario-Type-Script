@@ -1,1 +1,35 @@
-<p>listar-cliente works!</p>
+<a mat-raised-button color="warn" routerLink="/cliente/cadastrar">
+  Novo cliente
+</a>
+
+<br><br>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Nome do Cliente</th>
+      <th>CPF</th>
+      <th>E-mail</th>
+      <th>Renda<th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes">
+      <td>
+        {{ cliente._id }}
+      </td>
+      <td>
+          {{ cliente.nomeCliente }}
+      </td>
+      <td>
+          {{ cliente.cpf }}
+      </td>
+      <td>
+          {{ cliente.email }}
+      </td>
+      <td>
+        {{ cliente.renda }}
+    </td>
+    </tr>
+  </tbody>
+</table>

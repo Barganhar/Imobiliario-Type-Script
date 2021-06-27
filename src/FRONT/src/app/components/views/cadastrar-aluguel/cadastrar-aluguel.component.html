@@ -1,0 +1,29 @@
+<mat-card>
+    <mat-card-title> Cadastrar Aluguel </mat-card-title>
+    <mat-card-content>
+  
+      <div class="aluguel">
+        
+          <mat-card>
+            <mat-card-title> Adicionar Aluguel </mat-card-title>
+            <mat-card-content>
+              <div class="conteudo-aluguel">
+                <mat-form-field>
+                  <mat-label for="data">Nome do Aluguel</mat-label>
+                  <input matInput placeholder="Aluguel" type="text" name="data" [(ngModel)]="nomeAluguel" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="data">Valor do Aluguel</mat-label>
+                  <input matInput placeholder="Valor" type="number" name="data" [(ngModel)]="aluguel" />
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="data">Status do aluguel</mat-label>
+                  <input matInput placeholder="Status" type="text" name="data" [(ngModel)]="status"/>
+                </mat-form-field>
+              </div>
+      <mat-card-actions>
+        <button mat-raised-button color="warn" (click)="cadastrarAluguel()">Cadastrar</button>
+        <a mat-stroked-button routerLink=""> Listar Alugueis </a>
+      </mat-card-actions>
+    </mat-card-content>
+  </mat-card>
