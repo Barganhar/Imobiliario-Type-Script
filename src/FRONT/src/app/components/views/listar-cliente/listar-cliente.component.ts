@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Cliente } from 'src/app/models/Cliente';
-import { ImobiliariaService } from "./../../../services/imobiliaria.service";
+import { Cliente } from '../../../models/Cliente';
+import { ImobiliariaService } from "../../../services/imobiliaria.service";
 
 @Component({
   selector: 'app-listar-cliente',

@@ -1,6 +1,6 @@
-import { ImobiliariaService } from 'src/app/services/imobiliaria.service';
+import { ImobiliariaService } from '../../../services/imobiliaria.service';
 import { Component, OnInit } from '@angular/core';
-import { Casa } from 'src/app/models/Casa';
+import { Casa } from '../../../models/Casa';
 
 @Component({
   selector: 'app-listar-casa',

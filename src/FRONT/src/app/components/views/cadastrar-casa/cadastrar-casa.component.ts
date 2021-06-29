@@ -1,6 +1,6 @@
-import { Casa } from 'src/app/models/Casa';
+import { Casa } from '../../../models/Casa';
 import { Component, OnInit } from '@angular/core';
-import { ImobiliariaService } from 'src/app/services/imobiliaria.service';
+import { ImobiliariaService } from '../../../services/imobiliaria.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 

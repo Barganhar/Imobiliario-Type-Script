@@ -1,6 +1,6 @@
-import { Aluguel } from 'src/app/models/Aluguel';
+import { Aluguel } from '../../../models/Aluguel';
 import { Component, OnInit } from '@angular/core';
-import { ImobiliariaService } from 'src/app/services/imobiliaria.service';
+import { ImobiliariaService } from '../../../services/imobiliaria.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 

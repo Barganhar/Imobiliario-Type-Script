@@ -1,6 +1,6 @@
-import { Cliente } from 'src/app/models/Cliente';
+import { Cliente } from '../../../models/Cliente';
 import { Component, OnInit } from '@angular/core';
-import { ImobiliariaService } from 'src/app/services/imobiliaria.service';
+import { ImobiliariaService } from '../../../services/imobiliaria.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 

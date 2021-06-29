@@ -1,6 +1,6 @@
-import { Venda } from 'src/app/models/Venda';
+import { Venda } from '../../../models/Venda';
 import { Component, OnInit } from '@angular/core';
-import { ImobiliariaService } from 'src/app/services/imobiliaria.service';
+import { ImobiliariaService } from '../../../services/imobiliaria.service';
 import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
