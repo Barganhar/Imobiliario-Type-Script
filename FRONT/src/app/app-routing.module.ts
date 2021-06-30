@@ -40,7 +40,7 @@ const routes: Routes = [
     component: CadastrarAluguelComponent
   },
   {
-    path: 'lista/alugar',
+    path: 'listar/aluguel',
     component: ListarAluguelComponent
   }
 ];

@@ -11,39 +11,39 @@ import { Venda } from '../models/Venda';
 })
 export class ImobiliariaService {
 
-  private baseURL = "http://localhost:4200/";
+  private baseURL = "http://localhost:3000";
 
   constructor(private http: HttpClient) { }
 
   listarCasa(): Observable<Casa[]>{
-    return this.http.get<Casa[]>(`${this.baseURL}listar/casa`);
+    return this.http.get<Casa[]>(`${this.baseURL}/listar/casa`);
   }
 
   cadastrarCasa(casa: Casa): Observable<Casa>{
-    return this.http.post<Casa>(`${this.baseURL}registro/casa`, casa);
+    return this.http.post<Casa>(`${this.baseURL}/registro/casa`, casa);
   }
 
   listarCliente(): Observable<Cliente[]>{
-    return this.http.get<Cliente[]>(`${this.baseURL}listar/cliente`);
+    return this.http.get<Cliente[]>(`${this.baseURL}/listar/cliente`);
   }
 
   Cliente(cliente: Cliente): Observable<Cliente>{
-    return this.http.post<Cliente>(`${this.baseURL}registro/cliente`, cliente);
+    return this.http.post<Cliente>(`${this.baseURL}/registro/cliente`, cliente);
   }
 
   listarAluguel(): Observable<Aluguel[]>{
-    return this.http.get<Aluguel[]>(`${this.baseURL}listar/aluguel`);
+    return this.http.get<Aluguel[]>(`${this.baseURL}/listar/aluguel`);
   }
 
   cadastrarAluguel(aluguel: Aluguel): Observable<Aluguel>{
-    return this.http.post<Aluguel>(`${this.baseURL}registro/aluguel`, aluguel);
+    return this.http.post<Aluguel>(`${this.baseURL}/registro/aluguel`, aluguel);
   }
 
   listarVenda(): Observable<Venda[]>{
-    return this.http.get<Venda[]>(`${this.baseURL}listar/venda`);
+    return this.http.get<Venda[]>(`${this.baseURL}/listar/venda`);
   }
 
   cadastrarVenda(venda: Venda): Observable<Venda>{
-    return this.http.post<Venda>(`${this.baseURL}registro/venda`, venda);
+    return this.http.post<Venda>(`${this.baseURL}/registro/venda`, venda);
   }
 }

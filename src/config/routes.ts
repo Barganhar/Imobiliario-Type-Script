@@ -25,7 +25,7 @@ router.post("/registro/cliente", clienteController.cliente);
 router.get("/listar/venda", vendaController.listarVenda);
 router.get("/listar/aluguel", alugarController.listarAlugar);
 router.get("/listar/casa", casaController.listarCasa);
-router.post("/listar/cliente", clienteController.listarCliente);
+router.get("/listar/cliente", clienteController.listarCliente);
 
 // rotas para listagem
 router.get("/listar/venda/:id", vendaController.listarVendaId);

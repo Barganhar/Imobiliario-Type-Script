@@ -9,7 +9,7 @@ class ClienteController {
   async cliente(request: Request, response: Response) {
     try {
       const novacliente = await ClienteSchema.create(request.body);
-      response.status(201).json({data: novacliente, error: false, msg: "cliente cadastrado com sucesso!",});
+      response.status(201).json(novacliente);
     } catch (error) {
       response.status(400).json({
         data: error,
@@ -23,7 +23,7 @@ class ClienteController {
   async listarCliente(request: Request, response: Response) {
     try {
       const listar = await ClienteSchema.find();
-      response.status(200).json({ data: listar, error: false, msg: "cliente encontrada!" });
+      response.status(200).json(listar);
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "cliente não encontrada!" });
     }
@@ -33,7 +33,7 @@ class ClienteController {
     const {id} = request.params;
     try {
       const list = await ClienteSchema.findById({_id : id});
-      response.status(200).json({ data: list, error: false, msg: "cliente encontrada!" });
+      response.status(200).json(list);
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "cliente não encontrada!" });
     }
@@ -45,7 +45,7 @@ class ClienteController {
     const {id} = request.params;
     try {
       const locação = await ClienteSchema.deleteOne({_id : id});
-      response.status(200).json({data: locação, error: false, msg: "Registro deletado",});
+      response.status(200).json(locação);
     } catch (error) {
       response.status(400).json({data: error, error: true, msg: "Não foi possível deletar a cliente", });
     }

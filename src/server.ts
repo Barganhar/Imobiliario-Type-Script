@@ -1,4 +1,4 @@
-import express from "express"; 
+import express, { Request, Response }  from "express"; 
 import { router } from "./config/routes";
 import cors from "cors";
 import {mongoose} from "./config/database";

@@ -9,11 +9,7 @@ class VendaController {
   async venda(request: Request, response: Response) {
     try {
       const novaVenda = await VenderSchema.create(request.body);
-      response.status(201).json({
-        data: novaVenda,
-        error: false,
-        msg: "Venda cadastrado com sucesso!",
-      });
+      response.status(201).json(novaVenda);
     } catch (error) {
       response.status(400).json({
         data: error,
@@ -27,7 +23,7 @@ class VendaController {
   async listarVenda(request: Request, response: Response) {
     try {
       const VENDA = await OperaçãoSchema.find();
-      response.status(200).json({ data: VENDA, error: false, msg: "VENDA encontrada!" });
+      response.status(200).json(VENDA);
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "VENDA não encontrada!" });
     }
@@ -37,7 +33,7 @@ class VendaController {
     const {id} = request.params;
     try {
       const VENDA = await OperaçãoSchema.findById({_id : id})
-      response.status(200).json({ data: VENDA, error: false, msg: "VENDA encontrada!" });
+      response.status(200).json(VENDA);
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "VENDA não encontrada!" });
     }
@@ -48,7 +44,7 @@ class VendaController {
     const {id} = request.params;
     try {
       const venda = await OperaçãoSchema.deleteOne({_id : id});
-      response.status(200).json({data: venda, error: false, msg: "Registro deletado",});
+      response.status(200).json(venda);
     } catch (error) {
       response.status(400).json({data: error, error: true, msg: "Não foi possível deletar o registro", });
     }
