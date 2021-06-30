@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cliente } from '../../../models/Cliente';
 import { ImobiliariaService } from "../../../services/imobiliaria.service";
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-listar-cliente',
@@ -9,6 +10,8 @@ import { ImobiliariaService } from "../../../services/imobiliaria.service";
 })
 export class ListarClienteComponent implements OnInit {
   
+  colunasClientes: string[] = ['nome', 'cpf', 'Email', 'Renda', 'FormaGarantia'];
+  clientesTable = new MatTableDataSource<Cliente>();
   clientes: Cliente[] = [];
 
   constructor(private service: ImobiliariaService) { }

@@ -10,24 +10,21 @@ import { CadastrarClienteComponent } from './components/views/cadastrar-cliente/
 import { CadastrarAluguelComponent } from './components/views/cadastrar-aluguel/cadastrar-aluguel.component';
 
 const routes: Routes = [
+  
   {
-    path: '',
-    component: ListarClienteComponent
-  },
-  {
-    path: 'cliente/cadastrar',
+    path: 'registro/cliente',
     component: CadastrarClienteComponent
   },
   {
-    path: 'cliente/listar',
+    path: 'listar/cliente',
     component: ListarClienteComponent
   },
   {
-    path: 'casa/cadastrar',
+    path: 'registro/casa',
     component: CadastrarCasaComponent
   },
   {
-    path: 'casa/listar',
+    path: 'listar/casa',
     component: ListarCasaComponent
   },
   {
@@ -35,7 +32,7 @@ const routes: Routes = [
     component: CadastrarVendaComponent
   },
   {
-    path: 'venda/listar',
+    path: 'listar/venda',
     component: ListarVendaComponent
   },
   {
@@ -43,7 +40,7 @@ const routes: Routes = [
     component: CadastrarAluguelComponent
   },
   {
-    path: 'aluguel/listar',
+    path: 'lista/alugar',
     component: ListarAluguelComponent
   }
 ];

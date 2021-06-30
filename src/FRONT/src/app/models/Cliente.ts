@@ -1,8 +1,11 @@
 export class Cliente{
-    _id!: string;
-    cpf!: string;
-    nome!: string;
-    email!: string;
-    renda!: number;
-    garantia!: string;
+
+    _id?: String;
+    nome!: String;
+    cpf!: String;
+    Email!: String;
+    Renda!: Number;
+    FormaGarantia!: String;
+    createdAt?: Date;
+    updatedAt?: Date;
 }

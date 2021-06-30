@@ -3,6 +3,7 @@
     <mat-card-content>
   
       <div class="Cliente">
+        <a mat-stroked-button routerLink=""> Listar Clientes </a>
         
           <mat-card>
             <mat-card-title> Adicionar Cliente </mat-card-title>
@@ -10,28 +11,28 @@
               <div class="conteudo-cliente">
                 <mat-form-field>
                   <mat-label for="data">Nome do Cliente</mat-label>
-                  <input matInput placeholder="Cliente" type="text" name="data" [(ngModel)]="nomeCliente" />
+                  <input matInput placeholder="Cliente" type="text" [(ngModel)]="cliente.nome" />
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="data">CPF do Cliente</mat-label>
-                  <input matInput placeholder="CPF" type="text" name="data" [(ngModel)]="cpf" />
+                  <input matInput placeholder="CPF" type="text" [(ngModel)]="cliente.cpf" />
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="data">E-mail do Cliente</mat-label>
-                  <input matInput placeholder="E-mail" type="text" name="data" [(ngModel)]="email"/>
+                  <input matInput placeholder="E-mail" type="text" [(ngModel)]="cliente.Email"/>
                 </mat-form-field>
                 <mat-form-field>
                     <mat-label for="data">Renda do Cliente</mat-label>
-                    <input matInput placeholder="Renda" type="number" name="data" [(ngModel)]="renda"/>
+                    <input matInput placeholder="Renda" type="number" [(ngModel)]="cliente.Renda"/>
                   </mat-form-field>
                   <mat-form-field>
                     <mat-label for="data">Forma de garantia do Cliente</mat-label>
-                    <input matInput placeholder="Especialidade" type="text" name="data" [(ngModel)]="garantia"/>
+                    <input matInput placeholder="Garantia" type="text" [(ngModel)]="cliente.FormaGarantia"/>
                   </mat-form-field>
               </div>
-      <mat-card-actions>
-        <button mat-raised-button color="warn" (click)="cadastrarCliente()">Cadastrar</button>
-        <a mat-stroked-button routerLink="/cliente/listar"> Listar Clientes </a>
-      </mat-card-actions>
+
+      <div class="button-row"> 
+        <button mat-raised-button color="warn" (click) = "Cliente()">Cadastrar</button>
+      </div>
     </mat-card-content>
   </mat-card>
