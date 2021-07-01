@@ -10,14 +10,16 @@ import { VenderImp } from '../../../models/VenderImp';
 })
 export class ListarVendaComponent implements OnInit {
   
-  vender: VenderImp[] = [];
+  colunasVendas: string[] = ['nome', 'valor', 'status', 'data', 'editar', 'deletar'];
+  vendasTable = new MatTableDataSource<VenderImp>();
+  vendas: VenderImp[] = [];
+
   constructor(private service: ImobiliariaService) { }
 
-  ngOnInit(): void 
-  {
-    this.service.listarVenda().subscribe((vender)=>{
-      this.vender = vender;
-      console.log(vender)
+  ngOnInit(): void {
+    this.service.listarVenda().subscribe((vendas) => {
+      this.vendas = vendas;
+      console.log(vendas)
     });
   }
 

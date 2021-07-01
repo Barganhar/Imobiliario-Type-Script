@@ -12,6 +12,10 @@ import { EditarClienteComponent } from './components/views/editar-cliente/editar
 import { EditarCasaComponent } from './components/views/editar-casa/editar-casa.component';
 import { EditarVendaComponent } from './components/views/editar-venda/editar-venda.component';
 import { EditarAluguelComponent } from './components/views/editar-aluguel/editar-aluguel.component';
+import { VendaDeletarComponent } from './components/views/venda-deletar/venda-deletar.component';
+import { AluguelDeletarComponent } from './components/views/aluguel-deletar/aluguel-deletar.component';
+import { CasaDeletarComponent } from './components/views/casa-deletar/casa-deletar.component';
+import { ClienteDeletarComponent } from './components/views/cliente-deletar/cliente-deletar.component';
 
 const routes: Routes = [
   
@@ -28,6 +32,10 @@ const routes: Routes = [
     path: 'cliente/editar/:id',
     component: EditarClienteComponent
   },
+  {
+    path: 'remover/cliente/:id',
+    component: ClienteDeletarComponent
+  },
   //casa
   {
     path: 'registro/casa',
@@ -40,6 +48,10 @@ const routes: Routes = [
   {
     path: 'casa/editar/:id',
     component: EditarCasaComponent
+  },
+  {
+    path: 'remover/casa/:id',
+    component: CasaDeletarComponent
   },
   //venda
   {
@@ -54,6 +66,10 @@ const routes: Routes = [
     path: 'venda/editar/:id',
     component: EditarVendaComponent
   },
+  {
+    path: 'remover/venda/:id',
+    component: VendaDeletarComponent
+  },
   //aluguel
   {
     path: 'aluguel/cadastrar',
@@ -66,6 +82,10 @@ const routes: Routes = [
   {
     path: 'aluguel/editar/:id',
     component: EditarAluguelComponent
+  },
+  {
+    path: 'remover/aluguel/:id',
+    component: AluguelDeletarComponent
   }
 ];
 

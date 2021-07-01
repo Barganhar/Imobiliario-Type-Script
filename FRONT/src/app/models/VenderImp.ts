@@ -7,7 +7,6 @@ export class VenderImp{
     valor!: number;
     status!: string;
     data!: Date;
-    casa!: Casa;
     createdAt?: Date;
     updatedAt?: Date;
 }

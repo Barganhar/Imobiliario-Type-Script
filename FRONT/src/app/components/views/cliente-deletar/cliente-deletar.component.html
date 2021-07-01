@@ -1,1 +1,42 @@
-<p>cliente-deletar works!</p>
+<mat-card>
+    <mat-card-content>
+        <mat-card class="card">
+            <mat-card-title class="titulo">Deletar Cliente?</mat-card-title>
+            <mat-card-content>
+        <div class="nome-cliente">
+            <mat-card-subtitle>Nome</mat-card-subtitle>
+        <mat-form-field>
+            <mat-label for="nome">{{cliente.nome}}</mat-label>
+            <input matInput type="text" name="nome" disabled>
+        </mat-form-field>
+        <mat-card-subtitle>CPF</mat-card-subtitle>
+        <mat-form-field>
+            <mat-label for="nome">{{cliente.cpf}}</mat-label>
+            <input matInput type="text" name="nome" disabled>
+        </mat-form-field>
+        <mat-card-subtitle>E-mail</mat-card-subtitle>
+        <mat-form-field>
+            <mat-label for="nome">{{cliente.Email}}</mat-label>
+            <input matInput type="text" name="nome" disabled>
+        </mat-form-field>
+        <mat-card-subtitle>Renda</mat-card-subtitle>
+        <mat-form-field>
+            <mat-label for="nome">{{cliente.Renda}}</mat-label>
+            <input matInput type="text" name="nome" disabled>
+        </mat-form-field>
+        <mat-card-subtitle>Forma de Garantia</mat-card-subtitle>
+        <mat-form-field>
+            <mat-label for="nome">{{cliente.FormaGarantia}}</mat-label>
+            <input matInput type="text" name="nome" disabled>
+        </mat-form-field>
+    </div>
+    <div class="botoes">
+        <mat-card-actions>
+            <button mat-raised-button color="warn" (click)="deletarCliente()">Deletar</button>
+            <a mat-raised-button color="accent" routerLink="../../listar">Clientes</a>
+        </mat-card-actions>
+    </div>
+    </mat-card-content>
+    </mat-card>
+    </mat-card-content>
+</mat-card>

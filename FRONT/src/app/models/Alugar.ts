@@ -5,7 +5,6 @@ export class Alugar{
     valor!: number;
     status!: string;
     data!: Date;
-    casa!: string;
     createdAt?: Date;
     updatedAt?: Date;
 }

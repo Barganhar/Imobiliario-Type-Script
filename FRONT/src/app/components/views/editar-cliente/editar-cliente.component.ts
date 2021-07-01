@@ -49,7 +49,7 @@ export class EditarClienteComponent implements OnInit {
     cliente.FormaGarantia = this.FormaGarantia
     this.service.editarCliente(this.id, cliente).subscribe((cliente)=> {
       console.log(cliente);
-      this.snack.open("Cliente criado", "Clientes", {
+      this.snack.open("Cliente editado", "Clientes", {
         duration: 3000,
         horizontalPosition: "center",
         verticalPosition: "bottom"

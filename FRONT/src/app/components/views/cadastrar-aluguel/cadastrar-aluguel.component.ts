@@ -1,6 +1,8 @@
 import { Alugar } from '../../../models/Alugar';
 import { Component, OnInit } from '@angular/core';
 import { ImobiliariaService } from '../../../services/imobiliaria.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar',
@@ -9,18 +11,33 @@ import { ImobiliariaService } from '../../../services/imobiliaria.service';
 })
 export class CadastrarAluguelComponent implements OnInit {
   
-  aluguel: Alugar = new Alugar;
+  nome! : string;
+  valor!: number;
+  status! : string;
+  data! : Date;
 
+  constructor(private service: ImobiliariaService, private snack: MatSnackBar, private router: Router) { }
 
-  constructor(private service: ImobiliariaService) {  }
+  ngOnInit(): void { }
 
-  ngOnInit(): void {
-  }
+  Aluguel()
+  {
+    let alugar = new Alugar();
+    alugar.nome = this.nome;
+    alugar.valor = this.valor;
+    alugar.status = this.status;
+    alugar.data = this.data;
+    console.log(alugar)
+    this.service.Aluguel(alugar).subscribe((alugar) =>{
+    console.log(alugar);
+    this.snack.open("Aluguel cadastrado com sucesso", "Aluguel", {
+      duration: 3000,
+      horizontalPosition: "center",
+      verticalPosition: "bottom"
+    });
+    this.router.navigate(["../../listar/aluguel"]);
 
-  Aluguel(): void{
-   this.service.Aluguel(this.aluguel).subscribe((aluguel) =>{
-     console.log(aluguel);
-   })
+    });
   }
 
 }

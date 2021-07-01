@@ -30,7 +30,7 @@ export class CadastrarVendaComponent implements OnInit {
       console.log(vender)
       this.service.Vender(vender).subscribe((vender) =>{
       console.log(vender);
-      this.snack.open("Cadastrado com sucesso", "Vender", {
+      this.snack.open("Venda cadastrado com sucesso", "Vender", {
         duration: 3000,
         horizontalPosition: "center",
         verticalPosition: "bottom"

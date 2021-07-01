@@ -34,6 +34,10 @@ export class ImobiliariaService {
     return this.http.put<Casa>(`${this.baseURL}/casa/editar/${id}`, casa);
   }
 
+  deletarCasa(id: string): Observable<Casa>{
+    return this.http.delete<Casa>(`${this.baseURL}/deletar/casa/${id}`);
+  }
+
 
   //cliente
   listarCliente(): Observable<Cliente[]>{
@@ -52,6 +56,10 @@ export class ImobiliariaService {
     return this.http.put<Cliente>(`${this.baseURL}/cliente/editar/${id}`, cliente);
   }
 
+  deletarCliente(id: string): Observable<Cliente>{
+    return this.http.delete<Cliente>(`${this.baseURL}/deletar/cliente/${id}`);
+  }
+
 
   //aluguel
   listarAluguel(): Observable<AlugarImp[]>{
@@ -67,7 +75,11 @@ export class ImobiliariaService {
   }
 
   editarAluguel(id: string, aluguel: Alugar): Observable<Alugar>{
-    return this.http.put<Alugar>(`${this.baseURL}/aluguel/editar/${id}`, aluguel);
+    return this.http.put<Alugar>(`${this.baseURL}/alugar/editar/${id}`, aluguel);
+  }
+
+  deletarAluguel(id: string): Observable<Alugar>{
+    return this.http.delete<Alugar>(`${this.baseURL}/deletar/aluguel/${id}`);
   }
 
 
@@ -85,6 +97,10 @@ export class ImobiliariaService {
   }
 
   editarVenda(id: string, venda: Vender): Observable<Vender>{
-    return this.http.put<Vender>(`${this.baseURL}/venda/editar/${id}`, venda);
+    return this.http.put<Vender>(`${this.baseURL}/vender/editar/${id}`, venda);
+  }
+
+  deletarVenda(id: string): Observable<Vender>{
+    return this.http.delete<Vender>(`${this.baseURL}/deletar/venda/${id}`);
   }
 }

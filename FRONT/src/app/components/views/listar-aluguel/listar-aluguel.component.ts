@@ -10,7 +10,7 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class ListarAluguelComponent implements OnInit {
   
-  colunasAlugueis: string[] = ['nome', 'valor', 'status', 'editar', 'deletar'];
+  colunasAlugueis: string[] = ['nome', 'valor', 'status', 'data', 'editar', 'deletar'];
   alugueisTable = new MatTableDataSource<AlugarImp>();
   alugueis: AlugarImp[] = [];
 

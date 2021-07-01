@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Casa } from '../../../models/Casa';
 import { ImobiliariaService } from '../../../services/imobiliaria.service';
@@ -11,15 +12,19 @@ import { ImobiliariaService } from '../../../services/imobiliaria.service';
 })
 export class EditarCasaComponent implements OnInit {
 
-  id!: string
+  id!: string;
 
-  casa!: Casa
+  casa!: Casa;
 
-  novoCasa!: Casa
+  nome!: string;
+
+  cep!: string;
+
+  endereco!: string;
 
   private routeSub: Subscription = new Subscription();
 
-  constructor(private service: ImobiliariaService, private route: ActivatedRoute) { }
+  constructor(private service: ImobiliariaService, private snack: MatSnackBar, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
@@ -30,15 +35,21 @@ export class EditarCasaComponent implements OnInit {
     })
   }
 
-  editar(): void{
+  editarCasa(): void{
     let casa = new Casa();
     casa._id = this.casa._id;
-    casa.nome = this.novoCasa.nome;
-    casa.cep = this.novoCasa.cep;
-    casa.endereco = this.novoCasa.endereco;
+    casa.nome = this.nome;
+    casa.endereco = this.endereco;
+    casa.cep = this.cep;
     this.service.editarCasa(this.id, casa).subscribe((casa)=> {
-      this.casa = casa;
-    })
+      console.log(casa);
+      this.snack.open("Casa editado", "Casas", {
+        duration: 3000,
+        horizontalPosition: "center",
+        verticalPosition: "bottom"
+      });
+      this.router.navigate([""]);
+    });
   }
 
 }

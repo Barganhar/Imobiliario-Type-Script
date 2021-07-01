@@ -1,0 +1,41 @@
+<table mat-table [dataSource]="vendas" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome do Vender </th>
+      <td mat-cell *matCellDef="let vender"> {{vender.nome}} </td>
+    </ng-container>
+  
+       <ng-container matColumnDef="valor">
+        <th mat-header-cell *matHeaderCellDef> Valor do vender </th>
+        <td mat-cell *matCellDef="let vender"> {{vender.valor}} </td>
+      </ng-container>
+  
+       <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status </th>
+        <td mat-cell *matCellDef="let vender"> {{vender.status}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="data">
+        <th mat-header-cell *matHeaderCellDef> Data </th>
+        <td mat-cell *matCellDef="let vender"> {{vender.data}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="editar">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let vender">
+          <button mat-raised-button color="accent" routerLink="../../vender/editar/{{vender._id}}">Editar</button>
+  
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="deletar">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let vender" >
+  
+          <button mat-raised-button color="warn" routerLink="../../deletar/vender/{{vender._id}}">Deletar</button>
+        </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="colunasVendas"></tr>
+    <tr mat-row *matRowDef="let row; columns: colunasVendas;"></tr>
+  </table>

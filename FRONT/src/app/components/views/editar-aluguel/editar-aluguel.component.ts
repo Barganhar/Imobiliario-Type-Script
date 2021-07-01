@@ -39,9 +39,10 @@ export class EditarAluguelComponent implements OnInit {
     aluguel.nome = this.nome;
     aluguel.valor = this.valor;
     aluguel.status = this.status;
+    aluguel.data = this.data;
     this.service.editarAluguel(this.id, aluguel).subscribe((aluguel)=> {
       this.aluguel = aluguel;
-      this.snack.open("Alugueis cadastrados", "Alugueis", {
+      this.snack.open("Aluguel editado", "Aluguel", {
         duration: 3000,
         horizontalPosition: "center",
         verticalPosition: "bottom"

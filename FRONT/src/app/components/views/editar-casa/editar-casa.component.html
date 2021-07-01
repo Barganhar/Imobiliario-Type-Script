@@ -1,1 +1,32 @@
-<p>editar-casa works!</p>
+<mat-card>
+    <mat-card-content>
+        <mat-card class="card">
+            <mat-card-title class="titulo">Editar Cliente</mat-card-title>
+            <mat-card-content>
+        <div class="nome-generos">
+            <mat-card-subtitle>Nome</mat-card-subtitle>
+        <mat-form-field>
+            <mat-label for="nome">{{casa.nome}}</mat-label>
+            <input matInput placeholder="{{casa.nome}}" type="text" name="nome" [(ngModel)]="nome">
+        </mat-form-field>
+        <mat-card-subtitle>endereco</mat-card-subtitle>
+        <mat-form-field>
+            <mat-label for="cpf">{{casa.endereco}}</mat-label>
+            <input matInput placeholder="{{casa.endereco}}" type="text" name="cpf" [(ngModel)]="endereco">
+        </mat-form-field>
+        <mat-card-subtitle>CEP</mat-card-subtitle>
+        <mat-form-field>
+            <mat-label for="Email">{{casa.cep}</mat-label>
+            <input matInput placeholder="{{casa.cep}}" type="text" name="Email" [(ngModel)]="cep">
+        </mat-form-field>
+    </div>
+    <div class="botoes">
+        <mat-card-actions>
+            <button mat-raised-button color="accent" (click)="editarCasa()">Editar</button>
+            <a mat-stroked-button color="warn" routerLink="../../listar/casa">Categorias</a>
+        </mat-card-actions>
+    </div>
+    </mat-card-content>
+    </mat-card>
+    </mat-card-content>
+</mat-card>
