@@ -1,6 +1,6 @@
 export class Casa{
 
-    _id?: string;
+    _id!: string;
     nome!: string;
     endereco!: string;
     cep!: string;

@@ -1,11 +1,13 @@
-export class Alugar{
+import { Casa } from "./Casa";
+
+export class AlugarImp{
 
     _id?: string;
     nome!: string;
     valor!: number;
     status!: string;
     data!: Date;
-    casa!: string;
+    casa!: Casa;
     createdAt?: Date;
     updatedAt?: Date;
 }

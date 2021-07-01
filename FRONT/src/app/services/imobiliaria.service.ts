@@ -4,8 +4,11 @@ import { Observable } from 'rxjs';
 import { Casa } from '../models/Casa';
 import { Cliente } from '../models/Cliente';
 import { Alugar } from '../models/Alugar';
+import { AlugarImp } from '../models/AlugarImp';
 import { Vender} from '../models/Vender';
 import { Operacao } from '../models/Operacao';
+import { OperacaoImp } from '../models/OperacaoImp';
+
 
 @Injectable({
   providedIn: 'root'
@@ -53,8 +56,8 @@ export class ImobiliariaService {
 
 
   //aluguel
-  listarAluguel(): Observable<Alugar[]>{
-    return this.http.get<Alugar[]>(`${this.baseURL}/listar/aluguel`);
+  listarAluguel(): Observable<AlugarImp[]>{
+    return this.http.get<AlugarImp[]>(`${this.baseURL}/listar/aluguel`);
   }
 
   listarAluguelId(id: string): Observable<Alugar>{
@@ -71,8 +74,8 @@ export class ImobiliariaService {
 
 
   //venda
-  listarVenda(): Observable<Operacao[]>{
-    return this.http.get<Operacao[]>(`${this.baseURL}/listar/venda`);
+  listarVenda(): Observable<OperacaoImp[]>{
+    return this.http.get<OperacaoImp[]>(`${this.baseURL}/listar/venda`);
   }
 
   listarVendaId(id: string): Observable<Operacao>{

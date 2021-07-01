@@ -1,11 +1,11 @@
+import { Alugar } from "./Alugar";
 import { Cliente } from "./Cliente";
-import { VenderImp } from "./VenderImp";
 
 export class OperacaoImp{
 
     _id!: String;
     cliente!: Cliente;
-    vendas!: VenderImp[];
+    aluguel!: Alugar;
     createdAt?: Date;
     updatedAt?: Date;
 }

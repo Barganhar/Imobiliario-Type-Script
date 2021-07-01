@@ -21,8 +21,8 @@ class AlugarController {
   //LISTAR
   async listarAlugar(request: Request, response: Response) {
     try {
-      const LOCAÇÃO = await LocacaoSchema.find();
-      response.status(200).json(LOCAÇÃO);
+      const loca = await AlugarSchema.find();
+      response.status(200).json(loca);
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "LOCAÇÃO não encontrada!" });
     }
@@ -31,7 +31,7 @@ class AlugarController {
   async listarAlugarId(request: Request, response: Response) {
     const {id} = request.params;
     try {
-      const LOCAÇÃO = await LocacaoSchema.findById({_id : id});
+      const LOCAÇÃO = await AlugarSchema.findById({_id : id});
       response.status(200).json(LOCAÇÃO);
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "LOCAÇÃO não encontrada!" });
@@ -43,7 +43,7 @@ class AlugarController {
   async deletarAlugar(request: Request, response: Response) {
     const {id} = request.params;
     try {
-      const locacao = await LocacaoSchema.deleteOne({_id : id});
+      const locacao = await AlugarSchema.deleteOne({_id : id});
       response.status(200).json(locacao);
     } catch (error) {
       response.status(400).json({data: error, error: true, msg: "Não foi possível deletar o registro", });

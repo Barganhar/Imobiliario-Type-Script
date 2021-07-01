@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Alugar } from "../../../models/Alugar";
+import { AlugarImp } from "../../../models/AlugarImp";
 import { ImobiliariaService } from '../../../services/imobiliaria.service';
 import { MatTableDataSource } from '@angular/material/table';
 
@@ -11,14 +11,15 @@ import { MatTableDataSource } from '@angular/material/table';
 export class ListarAluguelComponent implements OnInit {
   
   colunasAlugueis: string[] = ['nome', 'valor', 'status', 'editar', 'deletar'];
-  alugueisTable = new MatTableDataSource<Alugar>();
-  alugueis: Alugar[] = [];
+  alugueisTable = new MatTableDataSource<AlugarImp>();
+  alugueis: AlugarImp[] = [];
 
   constructor(private service: ImobiliariaService) { }
 
   ngOnInit(): void {
     this.service.listarAluguel().subscribe((alugueis) => {
       this.alugueis = alugueis;
+      console.log(alugueis)
     });
   }
 

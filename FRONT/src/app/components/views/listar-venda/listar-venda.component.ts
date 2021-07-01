@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ImobiliariaService } from '../../../services/imobiliaria.service';
 import { MatTableDataSource } from '@angular/material/table';
-import { Operacao } from '../../../models/Operacao';
+import { OperacaoImp } from '../../../models/OperacaoImp';
 
 @Component({
   selector: 'app-listar',
@@ -10,13 +10,14 @@ import { Operacao } from '../../../models/Operacao';
 })
 export class ListarVendaComponent implements OnInit {
   
-  operacao: Operacao[] = [];
+  operacao: OperacaoImp[] = [];
   constructor(private service: ImobiliariaService) { }
 
   ngOnInit(): void 
   {
     this.service.listarVenda().subscribe((operacao)=>{
       this.operacao = operacao;
+      console.log(operacao)
     });
   }
 
