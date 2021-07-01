@@ -2,23 +2,27 @@
     <mat-card-title> Cadastrar Venda </mat-card-title>
     <mat-card-content>
   
-      <div class="venda">
+      <div class="vender">
         
         <mat-card>
             <mat-card-title> Adicionar Venda </mat-card-title>
             <mat-card-content>
-              <div class="conteudo-venda">
+              <div class="conteudo-vender">
                 <mat-form-field>
                   <mat-label for="data">Nome da venda</mat-label>
-                  <input matInput placeholder="Venda" type="text" name="data" [(ngModel)]="nomeVenda" />
+                  <input matInput placeholder="Venda" type="text" name="nome" [(ngModel)]="nome" />
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="data">Valor da venda</mat-label>
-                  <input matInput placeholder="Valor" type="number" name="data" [(ngModel)]="valor" />
+                  <input matInput placeholder="Valor" type="number" name="valor" [(ngModel)]="valor" />
                 </mat-form-field>
                 <mat-form-field>
-                  <mat-label for="data">Status da venda</mat-label>
-                  <input matInput placeholder="Status" type="text" name="data" [(ngModel)]="status"/>
+                  <mat-label for="data">Status da venda ("À VENDA", "VENDIDO")</mat-label>
+                  <input matInput placeholder="Status" type="text" name="status" [(ngModel)]="status"/>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="data">Data da venda</mat-label>
+                  <input matInput placeholder="Data" type="date" name="data" [(ngModel)]="data"/>
                 </mat-form-field>
               </div>
             </mat-card-content>
@@ -27,7 +31,8 @@
       </div>
 
         <mat-card-actions>
-            <button mat-raised-button color="warn" (click)="cadastrarVenda()">Cadastrar</button>
+            <button mat-raised-button color="warn" (click)="Vender()">Cadastrar</button>
+            <a mat-stroked-button routerLink="../../listar/venda"> Listar Vendas </a>
         </mat-card-actions>
         
     </mat-card-content>

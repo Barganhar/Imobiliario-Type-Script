@@ -6,7 +6,7 @@ const casa = new Schema(
         type: String,
         required: [true, "O nome é obrigatório!"],
     },
-    endereço: {
+    endereco: {
         type: String,
         required: [true, "O endereço é obrigatório!"],
     },

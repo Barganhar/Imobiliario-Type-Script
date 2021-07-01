@@ -1,8 +1,8 @@
-import { Venda } from '../../../models/Venda';
+import { Vender } from '../../../models/Vender';
 import { Component, OnInit } from '@angular/core';
 import { ImobiliariaService } from '../../../services/imobiliaria.service';
-import { Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cadastrar',
@@ -10,34 +10,34 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./cadastrar-venda.component.css']
 })
 export class CadastrarVendaComponent implements OnInit {
-  colunasVenda = ["nomeVenda","valor","status", "criadoEm"]
+  
+    nome! : string;
+    valor!: number;
+    status! : string;
+    data! : Date;
 
-  data!: string;
-
-  nomeVenda!: string;
-  valor!: number;
-  status!: string;
-
-
-  constructor(private service: ImobiliariaService, private router: Router, private snack: MatSnackBar) {  }
-
-  ngOnInit(): void {
-  }
-
-  cadastrarVenda(): void{
-    let venda = new Venda();
-    venda.nome = this.nomeVenda;
-    venda.valor = this.valor;
-    venda.status = this.status;
-    this.service.cadastrarVenda(venda).subscribe((venda => {
-      console.log(venda);
-      this.snack.open("Venda cadastrado com sucesso", "Venda", {
-        duration: 4200,
+    constructor(private service: ImobiliariaService, private snack: MatSnackBar, private router: Router) { }
+  
+    ngOnInit(): void { }
+  
+    Vender()
+    {
+      let vender = new Vender();
+      vender.nome = this.nome;
+      vender.valor = this.valor;
+      vender.status = this.status;
+      vender.data = this.data;
+      console.log(vender)
+      this.service.Vender(vender).subscribe((vender) =>{
+      console.log(vender);
+      this.snack.open("Cadastrado com sucesso", "Vender", {
+        duration: 3000,
         horizontalPosition: "center",
         verticalPosition: "bottom"
       });
-      this.router.navigate(["/venda/listar"]);
-    }));
-  }
+      this.router.navigate(["../../listar/venda"]);
+  
+      });
+    }
 
 }

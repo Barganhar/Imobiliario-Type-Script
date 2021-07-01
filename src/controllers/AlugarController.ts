@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import {LocaçãoSchema} from "../models/LocaçãoSchema";
+import {LocacaoSchema} from "../models/LocacaoSchema";
 import {AlugarSchema} from "../models/AlugarSchema";
 
 class AlugarController {
@@ -8,7 +8,7 @@ class AlugarController {
   async alugar(request: Request, response: Response) {
     try {
       const novoAlugar = await AlugarSchema.create(request.body);
-      response.status(201).json({data: novoAlugar, error: false, msg: "Aluguel cadastrado com sucesso!",});
+      response.status(201).json(novoAlugar);
     } catch (error) {
       response.status(400).json({
         data: error,
@@ -21,8 +21,8 @@ class AlugarController {
   //LISTAR
   async listarAlugar(request: Request, response: Response) {
     try {
-      const LOCAÇÃO = await LocaçãoSchema.find();
-      response.status(200).json({ data: LOCAÇÃO, error: false, msg: "LOCAÇÃO encontrada!" });
+      const LOCAÇÃO = await LocacaoSchema.find();
+      response.status(200).json(LOCAÇÃO);
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "LOCAÇÃO não encontrada!" });
     }
@@ -31,8 +31,8 @@ class AlugarController {
   async listarAlugarId(request: Request, response: Response) {
     const {id} = request.params;
     try {
-      const LOCAÇÃO = await LocaçãoSchema.findById({_id : id});
-      response.status(200).json({ data: LOCAÇÃO, error: false, msg: "LOCAÇÃO encontrada!" });
+      const LOCAÇÃO = await LocacaoSchema.findById({_id : id});
+      response.status(200).json(LOCAÇÃO);
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "LOCAÇÃO não encontrada!" });
     }
@@ -43,8 +43,8 @@ class AlugarController {
   async deletarAlugar(request: Request, response: Response) {
     const {id} = request.params;
     try {
-      const locação = await LocaçãoSchema.deleteOne({_id : id});
-      response.status(200).json({data: locação, error: false, msg: "Registro deletado",});
+      const locacao = await LocacaoSchema.deleteOne({_id : id});
+      response.status(200).json(locacao);
     } catch (error) {
       response.status(400).json({data: error, error: true, msg: "Não foi possível deletar o registro", });
     }
@@ -55,7 +55,7 @@ class AlugarController {
       const { id } = request.params;
       const body = request.body;
 
-      await LocaçãoSchema.findOneAndUpdate({ _id: id }, body, {
+      await LocacaoSchema.findOneAndUpdate({ _id: id }, body, {
         returnOriginal: false,
         useFindAndModify: false,
       });

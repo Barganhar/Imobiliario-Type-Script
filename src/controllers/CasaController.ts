@@ -9,7 +9,7 @@ class CasaController {
   async casa(request: Request, response: Response) {
     try {
       const novaCasa = await CasaSchema.create(request.body);
-      response.status(201).json({data: novaCasa, error: false, msg: "Casa cadastrado com sucesso!",});
+      response.status(201).json(novaCasa);
     } catch (error) {
       response.status(400).json({
         data: error,
@@ -23,7 +23,7 @@ class CasaController {
   async listarCasa(request: Request, response: Response) {
     try {
       const listar = await CasaSchema.find();
-      response.status(200).json({ data: listar, error: false, msg: "casa encontrada!" });
+      response.status(200).json(listar);
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "casa não encontrada!" });
     }
@@ -33,7 +33,7 @@ class CasaController {
     const {id} = request.params;
     try {
       const list = await CasaSchema.findById({_id : id});
-      response.status(200).json({ data: list, error: false, msg: "casa encontrada!" });
+      response.status(200).json(list);
     } catch (error) {
       response.status(404).json({ data: error, error: true, msg: "casa não encontrada!" });
     }
@@ -45,7 +45,7 @@ class CasaController {
     const {id} = request.params;
     try {
       const locação = await CasaSchema.deleteOne({_id : id});
-      response.status(200).json({data: locação, error: false, msg: "Registro deletado",});
+      response.status(200).json(locação);
     } catch (error) {
       response.status(400).json({data: error, error: true, msg: "Não foi possível deletar a casa", });
     }

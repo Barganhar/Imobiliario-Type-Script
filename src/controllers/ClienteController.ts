@@ -61,7 +61,7 @@ class ClienteController {
         useFindAndModify: false,
       });
 
-      response.status(204).json({});
+      response.status(204).json();
     } catch (error) {
       response.status(400).json({
         error: true,

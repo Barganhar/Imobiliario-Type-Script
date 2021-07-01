@@ -2,7 +2,7 @@
     <mat-card-title> Cadastrar Casas </mat-card-title>
     <mat-card-content>
   
-      <div class="casa">
+      <div class="Casa">
         
           <mat-card>
             <mat-card-title> Adicionar Casa </mat-card-title>
@@ -10,20 +10,20 @@
               <div class="conteudo-casa">
                 <mat-form-field>
                   <mat-label for="data">Nome da casa</mat-label>
-                  <input matInput placeholder="Casa" type="text" name="data" [(ngModel)]="nomeCasa" />
-                </mat-form-field>
-                <mat-form-field>
-                  <mat-label for="data">CEP da casa</mat-label>
-                  <input matInput placeholder="CEP" type="text" name="data" [(ngModel)]="cep" />
+                  <input matInput placeholder="Casa" type="text" name="data" [(ngModel)]="casa.nome" />
                 </mat-form-field>
                 <mat-form-field>
                   <mat-label for="data">Endereço da Casa</mat-label>
-                  <input matInput placeholder="Endereço" type="text" name="data" [(ngModel)]="endereco"/>
+                  <input matInput placeholder="Endereço" type="text" name="data" [(ngModel)]="casa.endereco"/>
+                </mat-form-field>
+                <mat-form-field>
+                  <mat-label for="data">CEP da casa</mat-label>
+                  <input matInput placeholder="CEP" type="text" name="data" [(ngModel)]="casa.cep" />
                 </mat-form-field>
               </div>
       <mat-card-actions>
         <button mat-raised-button color="warn" (click)="cadastrarCasa()">Cadastrar</button>
-        <a mat-stroked-button routerLink=""> Listar Casa </a>
+        <a mat-stroked-button routerLink="../../listar/casa"> Listar Casas </a>
       </mat-card-actions>
     </mat-card-content>
   </mat-card>

@@ -1,6 +1,7 @@
 import { ImobiliariaService } from '../../../services/imobiliaria.service';
 import { Component, OnInit } from '@angular/core';
 import { Casa } from '../../../models/Casa';
+import { MatTableDataSource } from '@angular/material/table';
 
 @Component({
   selector: 'app-listar-casa',
@@ -9,6 +10,8 @@ import { Casa } from '../../../models/Casa';
 })
 export class ListarCasaComponent implements OnInit {
 
+  colunasCasas: string[] = ['nome', 'endereco', 'cep', 'editar', 'deletar'];
+  casasTable = new MatTableDataSource<Casa>();
   casas: Casa[] = [];
 
   constructor(private service: ImobiliariaService) { }
@@ -18,5 +21,6 @@ export class ListarCasaComponent implements OnInit {
       this.casas = casas;
     });
   }
+  }
 
-}
+

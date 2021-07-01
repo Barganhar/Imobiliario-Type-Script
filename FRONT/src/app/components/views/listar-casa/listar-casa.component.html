@@ -1,31 +1,36 @@
-<a mat-raised-button color="warn" routerLink="/casa/cadastrar">
-    Nova Casa
-  </a>
-  
-  <br><br>
-  <table>
-    <thead>
-      <tr>
-        <th>#</th>
-        <th>Nome da Casa</th>
-        <th>CEP</th>
-        <th>Endereço</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let casa of casas">
-        <td>
-          {{ casa._id }}
-        </td>
-        <td>
-            {{ casa.nome }}
-        </td>
-        <td>
-            {{ casa.cep }}
-        </td>
-        <td>
-            {{ casa.endereco }}
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<table mat-table [dataSource]="casas" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="nome">
+      <th mat-header-cell *matHeaderCellDef> Nome da casa </th>
+      <td mat-cell *matCellDef="let casa"> {{casa.nome}} </td>
+    </ng-container>
+
+     <ng-container matColumnDef="endereco">
+      <th mat-header-cell *matHeaderCellDef> Endereço </th>
+      <td mat-cell *matCellDef="let casa"> {{casa.endereco}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cep">
+      <th mat-header-cell *matHeaderCellDef> CEP do casa </th>
+      <td mat-cell *matCellDef="let casa"> {{casa.cep}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let casa">
+        <button mat-raised-button color="accent" routerLink="../../casa/editar/{{casa._id}}">Editar</button>
+
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deletar">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let casa" >
+
+        <button mat-raised-button color="warn" routerLink="../../deletar/casa/{{casa._id}}">Deletar</button>
+      </td>
+    </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="colunasCasas"></tr>
+  <tr mat-row *matRowDef="let row; columns: colunasCasas;"></tr>
+</table>

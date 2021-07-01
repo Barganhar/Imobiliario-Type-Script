@@ -31,13 +31,13 @@ router.get("/listar/cliente", clienteController.listarCliente);
 router.get("/listar/venda/:id", vendaController.listarVendaId);
 router.get("/listar/aluguel/:id", alugarController.listarAlugarId);
 router.get("/listar/casa/:id", casaController.listarCasaId);
-router.post("/listar/cliente/:id", clienteController.listarClienteId);
+router.get("/listar/cliente/:id", clienteController.listarClienteId);
 
 // rotas para deletar
 router.delete("/deletar/venda/:id", vendaController.deletarVenda);
 router.delete("/deletar/aluguel/:id", alugarController.deletarAlugar);
 router.delete("/deletar/casa/:id", casaController.deletarCasa);
-router.delete("/deletar/cliente", clienteController.deletarCliente);
+router.delete("/deletar/cliente/:id", clienteController.deletarCliente);
 
 //editar
 router.put("/alugar/editar/:id", alugarController.editar);

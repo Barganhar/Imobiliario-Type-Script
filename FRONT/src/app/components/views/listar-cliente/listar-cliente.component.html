@@ -25,44 +25,23 @@
       <td mat-cell *matCellDef="let cliente"> {{cliente.FormaGarantia}} </td>
     </ng-container>
 
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let cliente">
+        <button mat-raised-button color="accent" routerLink="../../cliente/editar/{{cliente._id}}">Editar</button>
+
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="deletar">
+      <th mat-header-cell *matHeaderCellDef></th>
+      <td mat-cell *matCellDef="let cliente" >
+
+        <button mat-raised-button color="warn" routerLink="../../deletar/cliente/{{cliente._id}}">Deletar</button>
+      </td>
+    </ng-container>
+
   <tr mat-header-row *matHeaderRowDef="colunasClientes"></tr>
   <tr mat-row *matRowDef="let row; columns: colunasClientes;"></tr>
 </table>
-
-<!-- <a mat-raised-button color="warn" routerLink="/registro/cliente">
-  Novo Cliente
-</a>
-
-<br><br>
-<table>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Nome do Cliente</th>
-      <th>Cpf</th>
-      <th>Email</th>
-      <th>Renda</th>
-      <th>Forma de Garantia</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let cliente of clientes">
-      <td>
-        {{cliente.nome}}
-      </td>
-      <td>
-        {{cliente.cpf}}
-      </td>
-      <td>
-        {{cliente.Email}}
-      </td>
-      <td>
-        {{cliente.Renda}}
-      </td>
-      <td>
-        {{cliente.FormaGarantia}}
-      </td>
-    </tr>
-  </tbody>
-</table> -->
 

@@ -8,9 +8,14 @@ import { ListarVendaComponent } from './components/views/listar-venda/listar-ven
 import { ListarAluguelComponent } from './components/views/listar-aluguel/listar-aluguel.component';
 import { CadastrarClienteComponent } from './components/views/cadastrar-cliente/cadastrar-cliente.component';
 import { CadastrarAluguelComponent } from './components/views/cadastrar-aluguel/cadastrar-aluguel.component';
+import { EditarClienteComponent } from './components/views/editar-cliente/editar-cliente.component';
+import { EditarCasaComponent } from './components/views/editar-casa/editar-casa.component';
+import { EditarVendaComponent } from './components/views/editar-venda/editar-venda.component';
+import { EditarAluguelComponent } from './components/views/editar-aluguel/editar-aluguel.component';
 
 const routes: Routes = [
   
+  //cliente
   {
     path: 'registro/cliente',
     component: CadastrarClienteComponent
@@ -20,6 +25,11 @@ const routes: Routes = [
     component: ListarClienteComponent
   },
   {
+    path: 'cliente/editar/:id',
+    component: EditarClienteComponent
+  },
+  //casa
+  {
     path: 'registro/casa',
     component: CadastrarCasaComponent
   },
@@ -27,6 +37,11 @@ const routes: Routes = [
     path: 'listar/casa',
     component: ListarCasaComponent
   },
+  {
+    path: 'casa/editar/:id',
+    component: EditarCasaComponent
+  },
+  //venda
   {
     path: 'venda/cadastrar',
     component: CadastrarVendaComponent
@@ -36,12 +51,21 @@ const routes: Routes = [
     component: ListarVendaComponent
   },
   {
+    path: 'venda/editar/:id',
+    component: EditarVendaComponent
+  },
+  //aluguel
+  {
     path: 'aluguel/cadastrar',
     component: CadastrarAluguelComponent
   },
   {
     path: 'listar/aluguel',
     component: ListarAluguelComponent
+  },
+  {
+    path: 'aluguel/editar/:id',
+    component: EditarAluguelComponent
   }
 ];
 

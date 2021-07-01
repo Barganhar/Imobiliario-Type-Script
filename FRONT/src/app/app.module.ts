@@ -26,6 +26,14 @@ import { ListarVendaComponent } from './components/views/listar-venda/listar-ven
 import { ListarAluguelComponent } from './components/views/listar-aluguel/listar-aluguel.component';
 import { CadastrarClienteComponent } from './components/views/cadastrar-cliente/cadastrar-cliente.component';
 import { CadastrarAluguelComponent } from './components/views/cadastrar-aluguel/cadastrar-aluguel.component';
+import { EditarClienteComponent } from './components/views/editar-cliente/editar-cliente.component';
+import { EditarAluguelComponent } from './components/views/editar-aluguel/editar-aluguel.component';
+import { EditarVendaComponent } from './components/views/editar-venda/editar-venda.component';
+import { EditarCasaComponent } from './components/views/editar-casa/editar-casa.component';
+import { ClienteDeletarComponent } from './components/views/cliente-deletar/cliente-deletar.component';
+import { CasaDeletarComponent } from './components/views/casa-deletar/casa-deletar.component';
+import { AluguelDeletarComponent } from './components/views/aluguel-deletar/aluguel-deletar.component';
+import { VendaDeletarComponent } from './components/views/venda-deletar/venda-deletar.component';
 
 
 @NgModule({
@@ -41,7 +49,15 @@ import { CadastrarAluguelComponent } from './components/views/cadastrar-aluguel/
     CadastrarAluguelComponent,
     ListarVendaComponent,
     ListarAluguelComponent,
-    CadastrarClienteComponent
+    CadastrarClienteComponent,
+    EditarClienteComponent,
+    EditarAluguelComponent,
+    EditarVendaComponent,
+    EditarCasaComponent,
+    ClienteDeletarComponent,
+    CasaDeletarComponent,
+    AluguelDeletarComponent,
+    VendaDeletarComponent
   ],
   imports: [
     BrowserModule,

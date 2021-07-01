@@ -1,20 +1,17 @@
 ### TESTE REGISTRO
 
-POST http://localhost:3000/registro/cliente
+POST http://localhost:3000/registro/casa
 content-Type: application/json
-
 
 		{
 			"nome": "geraldo",
-            "cpf": "123456789",
-            "Email": "julio.filho1@",
-            "Renda": 200013,
-            "FormaGarantia": "TEM"
+            "endereco": "rua cima",
+            "cep": "123123123"
 		}
 	
 ###
 
-GET http://localhost:3000/listar/aluguel
+GET http://localhost:3000/listar/venda
 
 
 ###
