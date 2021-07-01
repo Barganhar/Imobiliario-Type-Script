@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { Cliente } from '../../../models/Cliente';
 import { ImobiliariaService } from '../../../services/imobiliaria.service';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-editar-cliente',
@@ -11,15 +12,23 @@ import { ImobiliariaService } from '../../../services/imobiliaria.service';
 })
 export class EditarClienteComponent implements OnInit {
 
-  id!: string
+  id!: string;
 
-  cliente!: Cliente
+  cliente!: Cliente;
 
-  novoCliente!: Cliente
+  nome!: string;
+
+  cpf!: string;
+
+  Email!: string;
+
+  Renda!: Number;
+
+  FormaGarantia!: string;
 
   private routeSub: Subscription = new Subscription();
 
-  constructor(private service: ImobiliariaService, private route: ActivatedRoute) { }
+  constructor(private service: ImobiliariaService, private snack: MatSnackBar, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.routeSub = this.route.params.subscribe(params => {
@@ -30,17 +39,23 @@ export class EditarClienteComponent implements OnInit {
     })
   }
 
-  editar(): void{
+  editarCliente(): void{
     let cliente = new Cliente();
     cliente._id = this.cliente._id;
-    cliente.nome = this.novoCliente.nome;
-    cliente.cpf = this.novoCliente.cpf;
-    cliente.Email = this.novoCliente.Email;
-    cliente.Renda = this.novoCliente.Renda;
-    cliente.FormaGarantia = this.novoCliente.FormaGarantia
+    cliente.nome = this.nome;
+    cliente.cpf = this.cpf;
+    cliente.Email = this.Email;
+    cliente.Renda = this.Renda;
+    cliente.FormaGarantia = this.FormaGarantia
     this.service.editarCliente(this.id, cliente).subscribe((cliente)=> {
-      this.cliente = cliente;
-    })
+      console.log(cliente);
+      this.snack.open("Cliente criado", "Clientes", {
+        duration: 3000,
+        horizontalPosition: "center",
+        verticalPosition: "bottom"
+      });
+      this.router.navigate([""]);
+    });
   }
 
 }

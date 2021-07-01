@@ -65,7 +65,7 @@ class CasaController {
     } catch (error) {
       response.status(400).json({
         error: true,
-        data: error.message,
+        data: error,
         msg: "Não foi possível concluir esta edição.",
       });
     }

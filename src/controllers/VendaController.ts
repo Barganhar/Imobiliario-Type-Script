@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import {OperacaoSchema} from "../models/OperacaoSchema";
 import {VenderSchema} from "../models/VenderSchema";
 
 
@@ -66,7 +65,7 @@ class VendaController {
     } catch (error) {
       response.status(400).json({
         error: true,
-        data: error.message,
+        data: error,
         msg: "Não foi possível concluir esta edição.",
       });
     }

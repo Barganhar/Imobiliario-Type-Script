@@ -23,6 +23,7 @@ const vender = new Schema(
     },
 
     casa: { type: Schema.Types.ObjectId, ref: "Casa" },
+    cliente: { type: Schema.Types.ObjectId, ref: "Cliente" },
   },
   {
     timestamps: true,

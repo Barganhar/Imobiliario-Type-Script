@@ -1,5 +1,4 @@
 import { Request, Response } from "express";
-import {LocacaoSchema} from "../models/LocacaoSchema";
 import {AlugarSchema} from "../models/AlugarSchema";
 
 class AlugarController {
@@ -55,7 +54,7 @@ class AlugarController {
       const { id } = request.params;
       const body = request.body;
 
-      await LocacaoSchema.findOneAndUpdate({ _id: id }, body, {
+      await AlugarSchema.findOneAndUpdate({ _id: id }, body, {
         returnOriginal: false,
         useFindAndModify: false,
       });
@@ -64,7 +63,7 @@ class AlugarController {
     } catch (error) {
       response.status(400).json({
         error: true,
-        data: error.message,
+        data: error,
         msg: "Não foi possível concluir esta edição.",
       });
     }

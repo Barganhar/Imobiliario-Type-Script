@@ -5,10 +5,8 @@ import { Casa } from '../models/Casa';
 import { Cliente } from '../models/Cliente';
 import { Alugar } from '../models/Alugar';
 import { AlugarImp } from '../models/AlugarImp';
+import { VenderImp } from '../models/VenderImp';
 import { Vender} from '../models/Vender';
-import { Operacao } from '../models/Operacao';
-import { OperacaoImp } from '../models/OperacaoImp';
-
 
 @Injectable({
   providedIn: 'root'
@@ -74,19 +72,19 @@ export class ImobiliariaService {
 
 
   //venda
-  listarVenda(): Observable<OperacaoImp[]>{
-    return this.http.get<OperacaoImp[]>(`${this.baseURL}/listar/venda`);
+  listarVenda(): Observable<VenderImp[]>{
+    return this.http.get<VenderImp[]>(`${this.baseURL}/listar/venda`);
   }
 
-  listarVendaId(id: string): Observable<Operacao>{
-    return this.http.get<Operacao>(`${this.baseURL}/listar/venda/${id}`);
+  listarVendaId(id: string): Observable<Vender>{
+    return this.http.get<Vender>(`${this.baseURL}/listar/venda/${id}`);
   }
 
   Vender(venda: Vender): Observable<Vender>{
     return this.http.post<Vender>(`${this.baseURL}/registro/venda`, venda);
   }
 
-  editarVenda(id: string, venda: Operacao): Observable<Operacao>{
-    return this.http.put<Operacao>(`${this.baseURL}/venda/editar/${id}`, venda);
+  editarVenda(id: string, venda: Vender): Observable<Vender>{
+    return this.http.put<Vender>(`${this.baseURL}/venda/editar/${id}`, venda);
   }
 }
