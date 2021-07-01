@@ -21,6 +21,8 @@ const alugar = new Schema(
       required: [true, "A data da locação é obrigatória"],
       min: ["2000-01-01", "Data mínima permitida: 01/01/2000"],
     },
+    casa: { type: Schema.Types.ObjectId, ref: "Casa" },
+    cliente: { type: Schema.Types.ObjectId, ref: "Cliente" },
   },
   {
     timestamps: true,

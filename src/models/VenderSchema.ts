@@ -21,6 +21,8 @@ const vender = new Schema(
       required: [true, "O campo data é obrigatório!"],
       min: ["2000-01-01", "Data mínima permitida: 01/01/2020"],
     },
+    casa: { type: Schema.Types.ObjectId, ref: "Casa" },
+    cliente: { type: Schema.Types.ObjectId, ref: "Cliente" },
   },
   {
     timestamps: true,
