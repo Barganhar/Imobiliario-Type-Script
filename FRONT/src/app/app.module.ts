@@ -18,6 +18,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { AppComponent } from './app.component';
 import { ContentComponent } from './components/template/content/content.component';
 import { HeaderComponent } from './components/template/header/header.component';
+
 import { CadastrarCasaComponent } from './components/views/cadastrar-casa/cadastrar-casa.component';
 import { ListarCasaComponent } from './components/views/listar-casa/listar-casa.component';
 import { ListarClienteComponent } from './components/views/listar-cliente/listar-cliente.component';
